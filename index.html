@@ -1,546 +1,871 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bougie - Formas que decoran</title>
-    <link rel="icon" href="icons/Logo_BOUGIE.png" />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Bougie - Shapes that decorate, aromas that surprise. Velas artesanales con diseño escultórico y aromas sorpresa."
+        />
+        <title>Bougie - Formas que decoran, aromas que sorprenden</title>
+        <link
+            rel="icon"
+            href="https://raw.githubusercontent.com/CRONOSWYT/Bougie/refs/heads/main/icons/Logo_BOUGIE.png"
+        />
 
-    <style>
-      :root {
-        --primary: #3eb7ff;
-        --secondary: #6be0ff;
-        --bg-dark: #021235;
-        --card-bg: rgba(12, 27, 58, 0.7);
-        --glass-border: rgba(61, 182, 255, 0.25);
-      }
+        <!-- Google Fonts: Inter -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
 
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
+        <!-- Font Awesome (íconos) -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+            crossorigin="anonymous"
+        />
 
-      body {
-        font-family: 'Inter', Arial, sans-serif;
-        color: #e8f6ff;
-        background: radial-gradient(
-          circle at top left,
-          rgba(12, 38, 88, 1) 0%,
-          var(--bg-dark) 100%
-        );
-        line-height: 1.6;
-      }
+        <style>
+            /* ════════════════════════════════════════════════════
+         VARIABLES Y BASE
+         ════════════════════════════════════════════════════ */
+            :root {
+                --primary: #3eb7ff;
+                --secondary: #6be0ff;
+                --bg-dark: #021235;
+                --card-bg: rgba(12, 27, 58, 0.7);
+                --glass-border: rgba(61, 182, 255, 0.25);
+            }
 
-      header.icono {
-        text-align: center;
-        padding: 100px 20px 80px;
-        background: linear-gradient(180deg, rgba(4, 34, 76, 0.8), var(--bg-dark)),
-          url("icons/BOUGIES.JPEG") center/cover;
-        border-bottom: 1px solid var(--glass-border);
-      }
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
 
-      .logo img {
-        width: 100%;
-        max-width: 200px;
-        filter: drop-shadow(0 0 15px rgba(62, 183, 255, 0.4));
-        margin-bottom: 25px;
-      }
+            html {
+                scroll-behavior: smooth;
+            }
 
-      .hero-text {
-        font-size: 1.2rem;
-        letter-spacing: 2px;
-        color: var(--secondary);
-        text-transform: uppercase;
-        margin-bottom: 10px;
-      }
+            body {
+                font-family: "Inter", Arial, sans-serif;
+                color: #e8f6ff;
+                background: radial-gradient(
+                    circle at top left,
+                    rgba(12, 38, 88, 1) 0%,
+                    var(--bg-dark) 100%
+                );
+                line-height: 1.6;
+            }
 
-      .espaciador {
-        width: min(1200px, 95%);
-        margin: 60px auto;
-      }
+            /* ════════════════════════════════════════════════════
+         NAVEGACIÓN FLOTANTE (GLASSMORPHISM)
+         ════════════════════════════════════════════════════ */
+            .nav-bougie {
+                position: fixed;
+                top: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 1000;
+                background: rgba(2, 18, 53, 0.85);
+                backdrop-filter: blur(12px);
+                border: 1px solid var(--glass-border);
+                padding: 10px 25px;
+                border-radius: 50px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+                display: flex;
+                gap: 20px;
+            }
 
-      h2 {
-        font-size: 2rem;
-        margin-bottom: 30px;
-        color: var(--secondary);
-        text-align: center;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        position: relative;
-      }
+            .nav-bougie a {
+                color: #e8f6ff;
+                text-decoration: none;
+                font-size: 0.9rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                transition: all 0.3s ease;
+                padding: 5px 0;
+            }
 
-      h2::after {
-        content: '';
-        display: block;
-        width: 60px;
-        height: 3px;
-        background: var(--primary);
-        margin: 10px auto;
-      }
+            .nav-bougie a:hover,
+            .nav-bougie a:focus {
+                color: var(--primary);
+                text-shadow: 0 0 10px rgba(62, 183, 255, 0.6);
+                outline: 2px solid var(--primary);
+                outline-offset: 2px;
+                border-radius: 4px;
+            }
 
-      .tarjetas {
-        display: grid;
-        gap: 30px;
-        margin-bottom: 60px;
-      }
+            .nav-bougie a.activo {
+                color: var(--primary);
+                border-bottom: 2px solid var(--primary);
+                text-shadow: 0 0 12px rgba(62, 183, 255, 0.8);
+            }
 
-      .tarjetas-3 {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      }
+            @media (max-width: 600px) {
+                .nav-bougie {
+                    width: 90%;
+                    justify-content: space-around;
+                    padding: 10px 15px;
+                    font-size: 0.75rem;
+                    gap: 8px;
+                }
+            }
 
-      .tarjeta {
-        background: var(--card-bg);
-        backdrop-filter: blur(10px);
-        padding: 35px;
-        border-radius: 24px;
-        border: 1px solid var(--glass-border);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-        transition: transform 0.3s ease;
-      }
+            /* ════════════════════════════════════════════════════
+         HEADER / HERO
+         ════════════════════════════════════════════════════ */
+            header.icono {
+                text-align: center;
+                padding: 120px 20px 80px;
+                background: linear-gradient(
+                    180deg,
+                    rgba(4, 34, 76, 0.8),
+                    var(--bg-dark)
+                );
+                border-bottom: 1px solid var(--glass-border);
+            }
 
-      .tarjeta:hover {
-        transform: translateY(-10px);
-        border-color: var(--primary);
-      }
+            .logo img {
+                width: 100%;
+                max-width: 200px;
+                filter: drop-shadow(0 0 15px rgba(62, 183, 255, 0.4));
+                margin-bottom: 25px;
+            }
 
-      .tarjeta h3 {
-        color: var(--primary);
-        margin-bottom: 15px;
-        font-size: 1.4rem;
-      }
+            .hero-text {
+                font-size: 1.2rem;
+                letter-spacing: 2px;
+                color: var(--secondary);
+                text-transform: uppercase;
+                margin-bottom: 10px;
+            }
 
-      /* Estilos para Gráficas */
-      .grid-graficas {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-      }
+            .hero-subtext {
+                color: #a3c4e8;
+                font-size: 0.95rem;
+            }
 
-      .tarjeta-grafica {
-        padding: 25px;
-        height: 400px;
-        display: flex;
-        flex-direction: column;
-      }
+            /* ════════════════════════════════════════════════════
+       CONTENEDOR PRINCIPAL
+         ════════════════════════════════════════════════════ */
+            .espaciador {
+                max-width: min(1200px, 95%);
+                margin: 0 auto;
+                padding: 4rem 0;
+            }
 
-      .canvas-container {
-        flex-grow: 1;
-        position: relative;
-        width: 100%;
-      }
+            /* Margen de desplazamiento para compensar el nav fijo */
+            #inicio {
+                scroll-margin-top: 0;
+            }
 
-      footer {
-        background: rgba(1, 10, 29, 0.95);
-        padding: 60px 20px;
-        text-align: center;
-        border-top: 1px solid var(--glass-border);
-      }
+            section {
+                scroll-margin-top: 90px;
+            }
 
-      .footer-info {
-        max-width: 800px;
-        margin: 0 auto;
-      }
+            /* ════════════════════════════════════════════════════
+         TARJETAS (IDENTIDAD / VALORES)
+         ════════════════════════════════════════════════════ */
+            h2 {
+                font-size: 2rem;
+                margin-bottom: 30px;
+                color: var(--secondary);
+                text-align: center;
+                text-transform: uppercase;
+                letter-spacing: 3px;
+                position: relative;
+            }
 
-      .creadores {
-        font-weight: 700;
-        color: var(--secondary);
-        margin: 15px 0;
-        font-size: 1.1rem;
-      }
+            h2::after {
+                content: "";
+                display: block;
+                width: 60px;
+                height: 3px;
+                background: var(--primary);
+                margin: 10px auto;
+            }
 
-      .email-link {
-        color: var(--primary);
-        text-decoration: none;
-        border: 1px solid var(--primary);
-        padding: 10px 25px;
-        border-radius: 50px;
-        transition: all 0.3s ease;
-      }
+            .tarjetas {
+                display: grid;
+                gap: 30px;
+                margin-bottom: 60px;
+            }
 
-      .email-link:hover {
-        background: var(--primary);
-        color: white;
-      }
+            .tarjetas-3 {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
 
-      @media (max-width: 900px) {
-        .grid-graficas { grid-template-columns: 1fr; }
-      }
-      /* --- Estilos Generales --- */
-.seccion-dashboard {
-  margin-bottom: 2rem;
-}
+            .tarjeta {
+                background: var(--card-bg);
+                backdrop-filter: blur(10px);
+                padding: 35px;
+                border-radius: 24px;
+                border: 1px solid var(--glass-border);
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+                transition:
+                    transform 0.3s ease,
+                    border-color 0.3s ease;
+            }
 
-.tarjeta_galeria {
- 
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+            .tarjeta:hover {
+                transform: translateY(-10px);
+                border-color: var(--primary);
+            }
 
-.tarjeta_galeria:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-}
+            .tarjeta h3 {
+                color: var(--primary);
+                margin-bottom: 15px;
+                font-size: 1.4rem;
+            }
 
-/* --- Rejilla de Galería / Collage Masonry --- */
-.grid-galeria {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  grid-auto-rows: 180px;
-  grid-auto-flow: dense; /* Rellena espacios automáticos */
-  gap: 1.25rem;
-}
+            .tarjeta p {
+                color: #a3c4e8;
+            }
 
-.tarjeta-galeria {
-  position: relative;
-}
+            /* ════════════════════════════════════════════════════
+         GRÁFICAS / ANÁLISIS DE MERCADO
+         ════════════════════════════════════════════════════ */
+            .grid-graficas {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
 
-.tarjeta-galeria img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Evita que las fotos se deformen */
-  display: block;
-}
+            .tarjeta-grafica {
+                padding: 25px;
+                height: 400px;
+                display: flex;
+                flex-direction: column;
+            }
 
-.info-galeria {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 0.8rem 1rem;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
-  color: #ffffff;
-}
+            .canvas-container {
+                flex-grow: 1;
+                position: relative;
+                width: 100%;
+            }
 
-.info-galeria h3 {
-  margin: 0;
-  font-size: 1rem;
-}
+            @media (max-width: 900px) {
+                .grid-graficas {
+                    grid-template-columns: 1fr;
+                }
+            }
 
-/* Variadores de tamaño para el collage */
-.tarjeta-destacada {
-  grid-column: span 2;
-  grid-row: span 2;
-}
+            /* ════════════════════════════════════════════════════
+         ENCUESTA (IFRAME)
+         ════════════════════════════════════════════════════ */
+            .iframe-container {
+                border-radius: 16px;
+                border: 1px solid var(--glass-border);
+                overflow: hidden;
+            }
 
-.tarjeta-ancha {
-  grid-column: span 2;
-}
+            .iframe-container iframe {
+                width: 100%;
+                height: 1000px;
+                border: 0;
+                display: block;
+            }
 
-/* Responsivo para celulares */
-@media (max-width: 600px) {
-  .tarjeta-destacada,
-  .tarjeta-ancha {
-    grid-column: span 1;
-    grid-row: span 1;
-  }
-}
-/* --- Desplazamiento Suave --- */
-html {
-  scroll-behavior: smooth;
-}
+            @media (max-width: 600px) {
+                .iframe-container iframe {
+                    height: 1400px;
+                }
+            }
 
-/* --- Menú Flotante Glassmorphism --- */
-.nav-bougie {
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
-  background: rgba(2, 18, 53, 0.85);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--glass-border);
-  padding: 10px 25px;
-  border-radius: 50px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  display: flex;
-  gap: 20px;
-}
+            /* ════════════════════════════════════════════════════
+         GALERÍA / COLLAGE MASONRY
+         ════════════════════════════════════════════════════ */
+            .grid-galeria {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+                grid-auto-rows: 180px;
+                grid-auto-flow: dense; /* Rellena espacios automáticos */
+                gap: 1.25rem;
+            }
 
-.nav-bougie a {
-  color: #e8f6ff;
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-}
+            .tarjeta-galeria {
+                position: relative;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+                transition:
+                    transform 0.2s ease,
+                    box-shadow 0.2s ease;
+            }
 
-.nav-bougie a:hover {
-  color: var(--primary);
-  text-shadow: 0 0 10px rgba(62, 183, 255, 0.6);
-}
+            .tarjeta-galeria:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+            }
 
-/* Ajuste de margen superior al body para el menú */
-body {
-  padding-top: 40px;
-}
+            .tarjeta-galeria img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; /* Evita que las fotos se deformen */
+                display: block;
+            }
 
-@media (max-width: 600px) {
-  .nav-bougie {
-    width: 90%;
-    justify-content: space-around;
-    padding: 10px 15px;
-    font-size: 0.75rem;
-    gap: 8px;
-  }
-}
-/* Estilo para el botón activo en el menú */
-.nav-bougie a.activo {
-  color: var(--primary);
-  border-bottom: 2px solid var(--primary);
-  text-shadow: 0 0 12px rgba(62, 183, 255, 0.8);
-}
-    </style>
-  </head>
+            .info-galeria {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 0.8rem 1rem;
+                background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+                color: #ffffff;
+            }
 
-  <body>
+            .info-galeria h3 {
+                margin: 0;
+                font-size: 1rem;
+            }
+
+            /* Variadores de tamaño para el collage */
+            .tarjeta-destacada {
+                grid-column: span 2;
+                grid-row: span 2;
+            }
+
+            .tarjeta-ancha {
+                grid-column: span 2;
+            }
+
+            @media (max-width: 600px) {
+                .tarjeta-destacada,
+                .tarjeta-ancha {
+                    grid-column: span 1;
+                    grid-row: span 1;
+                }
+            }
+
+            /* ════════════════════════════════════════════════════
+         FOOTER
+         ════════════════════════════════════════════════════ */
+            footer {
+                background: rgba(1, 10, 29, 0.95);
+                padding: 60px 20px;
+                text-align: center;
+                border-top: 1px solid var(--glass-border);
+            }
+
+            .footer-info {
+                max-width: 800px;
+                margin: 0 auto;
+            }
+
+            .footer-copy {
+                color: #a3c4e8;
+                font-size: 0.9rem;
+                margin-bottom: 10px;
+            }
+
+            .creadores {
+                font-weight: 700;
+                color: var(--secondary);
+                margin: 15px 0;
+                font-size: 1.1rem;
+            }
+
+            .email-link {
+                color: var(--primary);
+                text-decoration: none;
+                border: 1px solid var(--primary);
+                padding: 10px 25px;
+                border-radius: 50px;
+                transition: all 0.3s ease;
+                display: inline-block;
+            }
+
+            .email-link:hover,
+            .email-link:focus {
+                background: var(--primary);
+                color: white;
+                outline: 2px solid var(--primary);
+                outline-offset: 2px;
+            }
+
+            /* ════════════════════════════════════════════════════
+         BOTÓN FLOTANTE (Asistente Gemini)
+         ════════════════════════════════════════════════════ */
+            .bot-fab {
+                position: fixed;
+                bottom: 25px;
+                right: 25px;
+                z-index: 1000;
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                background: linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--secondary)
+                );
+                border: 1px solid var(--glass-border);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                cursor: pointer;
+            }
+
+            .bot-fab:hover,
+            .bot-fab:focus {
+                transform: scale(1.1) translateY(-3px);
+                box-shadow: 0 15px 40px rgba(62, 183, 255, 0.5);
+                outline: 2px solid var(--primary);
+                outline-offset: 4px;
+            }
+
+            .bot-fab i {
+                font-size: 28px;
+                color: white;
+            }
+
+            .bot-fab span {
+                position: absolute;
+                bottom: -34px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: rgba(2, 18, 53, 0.85);
+                backdrop-filter: blur(8px);
+                border: 1px solid var(--glass-border);
+                color: #e8f6ff;
+                font-size: 0.7rem;
+                padding: 4px 14px;
+                border-radius: 20px;
+                white-space: nowrap;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                pointer-events: none;
+            }
+
+            .bot-fab:hover span,
+            .bot-fab:focus span {
+                opacity: 1;
+            }
+
+            @media (max-width: 600px) {
+                .bot-fab {
+                    bottom: 15px;
+                    right: 15px;
+                    width: 60px;
+                    height: 60px;
+                }
+
+                .bot-fab i {
+                    font-size: 22px;
+                }
+            }
+        </style>
+    </head>
+
     <body>
-  <!-- MENÚ FLOTANTE DE NAVEGACIÓN -->
-  <nav class="nav-bougie">
-    <a href="#inicio">inicio</a>
-    <a href="#identidad">Identidad</a>
-    <a href="#valores">Valores</a>
-    <a href="#mercado">Mercado</a>
-    <a href="#encuesta">Encuesta</a>
-    <a href="#galeria">Galería</a>
-  </nav>
+        <!-- MENÚ FLOTANTE DE NAVEGACIÓN -->
+        <nav class="nav-bougie" aria-label="Menú de navegación principal">
+            <a href="#inicio">Inicio</a>
+            <a href="#identidad">Identidad</a>
+            <a href="#valores">Valores</a>
+            <a href="#mercado">Mercado</a>
+            <a href="#encuesta">Encuesta</a>
+            <a href="#galeria">Galería</a>
+        </nav>
 
-    <header class="icono" id="inicio">
-      <div class="logo">
-        <img src="icons/Logo_BOUGIE.png" alt="Logo Bougie" />
-      </div>
-      <p class="hero-text"><strong>Bougie</strong></p>
-      <p>Shapes that decorate, aromas that surprise.</p>
-    </header>
-
-<main class="espaciador">
-        <br><br><br><br>
-      <section id="identidad">
-        <h2>Nuestra Identidad</h2>
-        <div class="tarjetas tarjetas-3">
-          <div class="tarjeta">
-            <h3>Misión</h3>
-            <p>Transformar espacios cotidianos en escenarios de arte y misterio, ofreciendo velas artesanales que equilibran la estética visual con experiencias sensoriales inesperadas.</p>
-          </div>
-          <div class="tarjeta">
-            <h3>Visión</h3>
-            <p>Consolidarnos para el 2030 como la marca referente en decoración sensorial, innovando constantemente en el diseño escultórico y la sorpresa olfativa a nivel nacional.</p>
-          </div>
-          <div class="tarjeta">
-            <h3>Factor Diferencial</h3>
-            <p>A diferencia de lo convencional, nuestras piezas son arte decorativo desde el primer segundo. La magia reside en el aroma aleatorio: un descubrimiento sensorial dinámico en cada compra.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="valores">
-        <br><br><br><br>
-        <h2>Valores Empresariales</h2>
-        <div class="tarjetas tarjetas-3">
-          <div class="tarjeta">
-            <h3>Estética Artística</h3>
-            <p>Creemos que una vela no solo debe iluminar, sino decorar. Priorizamos el diseño escultórico para que cada pieza sea una obra de arte exclusiva.</p>
-          </div>
-          <div class="tarjeta">
-            <h3>Innovación Sensorial</h3>
-            <p>Nos arriesgamos con el misterio. El factor sorpresa del aroma aleatorio es nuestro compromiso con una experiencia de cliente dinámica y emocionante.</p>
-          </div>
-          <div class="tarjeta">
-            <h3>Armonía Integral</h3>
-            <p>Buscamos el equilibrio perfecto entre el hogar, la oficina y el estudio, aportando bienestar a través de la mezcla de formas y fragancias agradables.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="mercado">
-        <br><br><br><br>
-        <h2>Análisis de Mercado</h2>
-        <div class="grid-graficas">
-          <div class="tarjeta tarjeta-grafica">
-            <h3>Aceptación del Producto</h3>
-            <div class="canvas-container">
-              <canvas id="chartGusto"></canvas>
+        <header class="icono" id="inicio">
+            <div class="logo">
+                <img
+                    src="https://raw.githubusercontent.com/CRONOSWYT/Bougie/refs/heads/main/icons/Logo_BOUGIE.png"
+                    alt="Logo de Bougie"
+                />
             </div>
-          </div>
-          <div class="tarjeta tarjeta-grafica">
-            <h3>Frecuencia de Consumo</h3>
-            <div class="canvas-container">
-              <canvas id="chartFrecuencia"></canvas>
+            <p class="hero-text"><strong>Bougie</strong></p>
+            <p class="hero-subtext">
+                Shapes that decorate, aromas that surprise.
+            </p>
+        </header>
+
+        <main class="espaciador">
+            <!-- ════════════════════════════════════ IDENTIDAD ════════════════════════════════════ -->
+            <section id="identidad">
+                <h2>Nuestra Identidad</h2>
+                <div class="tarjetas tarjetas-3">
+                    <div class="tarjeta">
+                        <h3>Misión</h3>
+                        <p>
+                            Transformar espacios cotidianos en escenarios de
+                            arte y misterio, ofreciendo velas artesanales que
+                            equilibran la estética visual con experiencias
+                            sensoriales inesperadas.
+                        </p>
+                    </div>
+                    <div class="tarjeta">
+                        <h3>Visión</h3>
+                        <p>
+                            Consolidarnos para el 2030 como la marca referente
+                            en decoración sensorial, innovando constantemente en
+                            el diseño escultórico y la sorpresa olfativa a nivel
+                            nacional.
+                        </p>
+                    </div>
+                    <div class="tarjeta">
+                        <h3>Factor Diferencial</h3>
+                        <p>
+                            A diferencia de lo convencional, nuestras piezas son
+                            arte decorativo desde el primer segundo. La magia
+                            reside en el aroma aleatorio: un descubrimiento
+                            sensorial dinámico en cada compra.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ════════════════════════════════════ VALORES ════════════════════════════════════ -->
+            <section id="valores">
+                <h2>Valores Empresariales</h2>
+                <div class="tarjetas tarjetas-3">
+                    <div class="tarjeta">
+                        <h3>Estética Artística</h3>
+                        <p>
+                            Creemos que una vela no solo debe iluminar, sino
+                            decorar. Priorizamos el diseño escultórico para que
+                            cada pieza sea una obra de arte exclusiva.
+                        </p>
+                    </div>
+                    <div class="tarjeta">
+                        <h3>Innovación Sensorial</h3>
+                        <p>
+                            Nos arriesgamos con el misterio. El factor sorpresa
+                            del aroma aleatorio es nuestro compromiso con una
+                            experiencia de cliente dinámica y emocionante.
+                        </p>
+                    </div>
+                    <div class="tarjeta">
+                        <h3>Armonía Integral</h3>
+                        <p>
+                            Buscamos el equilibrio perfecto entre el hogar, la
+                            oficina y el estudio, aportando bienestar a través
+                            de la mezcla de formas y fragancias agradables.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ════════════════════════════════════ ANÁLISIS DE MERCADO ════════════════════════════════════ -->
+            <section id="mercado">
+                <h2>Análisis de Mercado</h2>
+                <div class="grid-graficas">
+                    <div class="tarjeta tarjeta-grafica">
+                        <h3>Aceptación del Producto</h3>
+                        <div class="canvas-container">
+                            <canvas
+                                id="chartGusto"
+                                aria-label="Gráfico de aceptación del producto"
+                            ></canvas>
+                        </div>
+                    </div>
+                    <div class="tarjeta tarjeta-grafica">
+                        <h3>Frecuencia de Consumo</h3>
+                        <div class="canvas-container">
+                            <canvas
+                                id="chartFrecuencia"
+                                aria-label="Gráfico de frecuencia de consumo"
+                            ></canvas>
+                        </div>
+                    </div>
+                    <div class="tarjeta tarjeta-grafica">
+                        <h3>Espacios a Decorar</h3>
+                        <div class="canvas-container">
+                            <canvas
+                                id="chartEspacios"
+                                aria-label="Gráfico de espacios a decorar"
+                            ></canvas>
+                        </div>
+                    </div>
+                    <div class="tarjeta tarjeta-grafica">
+                        <h3>Preferencias Olfativas</h3>
+                        <div class="canvas-container">
+                            <canvas
+                                id="chartAromas"
+                                aria-label="Gráfico de preferencias olfativas"
+                            ></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ════════════════════════════════════ ENCUESTA ════════════════════════════════════ -->
+            <section id="encuesta">
+                <h2>Encuesta</h2>
+                <div class="iframe-container">
+                    <iframe
+                        src="https://docs.google.com/forms/d/e/1FAIpQLSegygjBsQcAyg4xwL0alRR2Ud9BL2LSPs5UCmqCLjFpGA-E8w/viewform?embedded=true"
+                        title="Encuesta de satisfacción de Bougie - Formas que decoran"
+                        referrerpolicy="no-referrer"
+                        allow="fullscreen"
+                    >
+                        <p>
+                            Tu navegador no soporta el iframe. Puedes acceder a
+                            la encuesta directamente en
+                            <a
+                                href="https://docs.google.com/forms/d/e/1FAIpQLSegygjBsQcAyg4xwL0alRR2Ud9BL2LSPs5UCmqCLjFpGA-E8w/viewform"
+                                target="_blank"
+                                rel="noopener"
+                                >este enlace</a
+                            >.
+                        </p>
+                    </iframe>
+                </div>
+            </section>
+
+            <!-- ════════════════════════════════════ GALERÍA ════════════════════════════════════ -->
+            <section id="galeria">
+                <h2>Galería de Productos</h2>
+                <div class="grid-galeria">
+                    <article class="tarjeta-galeria tarjeta-destacada">
+                        <img loading="lazy"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCbN-YIcMxSlA4T8YHbtQognqed31F-7d7bzQaLpzFdQ&s=10"
+                            alt="Velas Bougie en forma de Yin Yang"
+                        />
+                        <div class="info-galeria">
+                            <h3>Yin Yang</h3>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-galeria">
+                        <img loading="lazy"
+                            src="http://www.sunbeamcandles.com/cdn/shop/files/Natural-Handcrafted-100_-Beeswax-Candle-non-toxic-emergency-highest-rated-long-burning-Unscented-Large-Red-carved-Rose-Sculpted-Candle-Valentines-unique-trending-home-gifts-grande-flower-love3_1200x1200.png?v=1723673812"
+                            alt="Velas Bougie talladas en forma de rosa"
+                        />
+                        <div class="info-galeria">
+                            <h3>Rosas</h3>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-galeria">
+                        <img loading="lazy"
+                            src="https://bcdn.vendora.gr/0/a9/00/a9008e6f6cccf42ceead33719f74e74ea5373a06.jpg?class=lsq"
+                            alt="Velas Bougie con diseño de temática Minecraft"
+                        />
+                        <div class="info-galeria">
+                            <h3>Minecraft</h3>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-galeria tarjeta-ancha">
+                        <img loading="lazy"
+                            src="https://i.etsystatic.com/41768317/r/il/dfab68/6037167740/il_500x500.6037167740_q7r7.jpg"
+                            alt="Velas tipo pilar Bougie en display"
+                        />
+                        <div class="info-galeria">
+                            <h3>Pillar candles</h3>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <!-- ════════════════════════════════════ FOOTER ════════════════════════════════════ -->
+        <footer>
+            <div class="footer-info">
+                <p class="footer-copy">
+                    © 2026 BOUGIE - Formas que decoran, aromas que sorprenden.
+                </p>
+                <p class="creadores">
+                    Equipo: Pablo Bedoya, Nicolas Agudelo Sanint y Alexa Perdomo
+                    Agudelo
+                </p>
+                <a href="mailto:bougie.magique2026@gmail.com" class="email-link"
+                    >bougie.magique2026@gmail.com</a
+                >
             </div>
-          </div>
-          <div class="tarjeta tarjeta-grafica">
-            <h3>Espacios a Decorar</h3>
-            <div class="canvas-container">
-              <canvas id="chartEspacios"></canvas>
-            </div>
-          </div>
-          <div class="tarjeta tarjeta-grafica">
-            <h3>Preferencias Olfativas</h3>
-            <div class="canvas-container">
-              <canvas id="chartAromas"></canvas>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <br>
-      <section id="encuesta">
-        <br><br><br><br>
-        <h2>Encuesta</h2>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSegygjBsQcAyg4xwL0alRR2Ud9BL2LSPs5UCmqCLjFpGA-E8w/viewform?embedded=true" width="100%" height="1000" frameborder="0" marginheight="0" marginwidth="0" style="border-radius: 16px; border: 1px solid var(--glass-border);">Cargando…</iframe>
-      </section>
-      <br>
+        </footer>
 
-      <section id="galeria" class="seccion-dashboard">
-        <br><br><br><br>
-        <h2>Galería de Productos</h2>
-        <div class="grid-galeria">
+        <!-- BOTÓN FLOTANTE: Asistente de Gemini -->
+        <a
+            href="https://gemini.google.com/gem/19jp6gpLYU47BwzDojwpcwbHi9by_gsHw?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bot-fab"
+            aria-label="Abrir asistente de Gemini"
+        >
+            <i class="fa-solid fa-comment-dots"></i>
+            <span>Asistente Gemini</span>
+        </a>
 
-          <article class="tarjeta_galeria tarjeta-galeria tarjeta-destacada">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCbN-YIcMxSlA4T8YHbtQognqed31F-7d7bzQaLpzFdQ&s=10" alt="Producto Principal">
-            <div class="info-galeria">
-              <h3>Yin Yang</h3>
-            </div>
-          </article>
+        <!-- ════════════════════════════════════ SCRIPTS ════════════════════════════════════ -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            (function () {
+                "use strict";
 
-          <article class="tarjeta_galeria tarjeta-galeria">
-            <img src="http://www.sunbeamcandles.com/cdn/shop/files/Natural-Handcrafted-100_-Beeswax-Candle-non-toxic-emergency-highest-rated-long-burning-Unscented-Large-Red-carved-Rose-Sculpted-Candle-Valentines-unique-trending-home-gifts-grande-flower-love3_1200x1200.png?v=1723673812" alt="Producto 2">
-            <div class="info-galeria">
-              <h3>Rosas</h3>
-            </div>
-          </article>
+                /* --- SISTEMA DE SECCIÓN ACTIVA (SCROLLSPY) --- */
+                if (typeof IntersectionObserver !== "undefined") {
+                    const secciones = document.querySelectorAll(
+                        "header[id], section[id]",
+                    );
+                    const enlacesNav =
+                        document.querySelectorAll(".nav-bougie a");
 
-          <article class="tarjeta_galeria tarjeta-galeria">
-            <img src="https://bcdn.vendora.gr/0/a9/00/a9008e6f6cccf42ceead33719f74e74ea5373a06.jpg?class=lsq" alt="Producto 3">
-            <div class="info-galeria">
-              <h3>Minecraft</h3>
-            </div>
-          </article>
+                    const observador = new IntersectionObserver(
+                        (entradas) => {
+                            entradas.forEach((entrada) => {
+                                if (entrada.isIntersecting) {
+                                    const idSeccion =
+                                        entrada.target.getAttribute("id");
 
-          <article class="tarjeta_galeria tarjeta-galeria tarjeta-ancha">
-            <img src="https://i.etsystatic.com/41768317/r/il/dfab68/6037167740/il_500x500.6037167740_q7r7.jpg" alt="Producto Panorámico">
-            <div class="info-galeria">
-              <h3>Pillar candles</h3>
-            </div>
-          </article>
+                                    enlacesNav.forEach((enlace) => {
+                                        enlace.classList.remove("activo");
+                                        if (
+                                            enlace.getAttribute("href") ===
+                                            "#" + idSeccion
+                                        ) {
+                                            enlace.classList.add("activo");
+                                        }
+                                    });
+                                }
+                            });
+                        },
+                        {
+                            // Se activa cuando la sección está en el centro de la pantalla
+                            rootMargin: "-30% 0px -50% 0px",
+                        },
+                    );
 
-        </div>
-      </section>
-    </main>
+                    secciones.forEach((seccion) => observador.observe(seccion));
+                }
 
-    <footer>
-      <div class="footer-info">
-        <p>© 2026 BOUGIE - Formas que decoran, aromas que sorprenden.</p>
-        <p class="creadores">Equipo: Pablo Bedoya, Nicolas Agudelo Sanint y Alexa Perdomo Agudelo</p>
-        <br>
-        <a href="mailto:bougie.magique2026@gmail.com" class="email-link">bougie.magique2026@gmail.com</a>
-      </div>
-    </footer>
+                /* --- GRÁFICAS (Chart.js) --- */
+                if (typeof Chart !== "undefined") {
+                    const colors = {
+                        blue: "#3eb7ff",
+                        cyan: "#6be0ff",
+                        dark: "#0c1b3a",
+                        accent: "#ff6b6b",
+                    };
 
-    <script>
-        // --- SISTEMA DE SECCIÓN ACTIVA (SCROLLSPY) ---
-const secciones = document.querySelectorAll('header[id], section[id]');
-const enlacesNav = document.querySelectorAll('.nav-bougie a');
+                    Chart.defaults.color = "#e8f6ff";
+                    Chart.defaults.font.family = "Inter";
 
-const observador = new IntersectionObserver((entradas) => {
-  entradas.forEach((entrada) => {
-    if (entrada.isIntersecting) {
-      const idSeccion = entrada.target.getAttribute('id');
-      
-      enlacesNav.forEach((enlace) => {
-        enlace.classList.remove('activo');
-        if (enlace.getAttribute('href') === `#${idSeccion}`) {
-          enlace.classList.add('activo');
-        }
-      });
-    }
-  });
-}, {
-  // Se activa cuando la sección ocupa el centro de la pantalla
-  rootMargin: '-30% 0px -50% 0px' 
-});
+                    // Gráfico 1: Aceptación del Producto (Doughnut)
+                    new Chart(document.getElementById("chartGusto"), {
+                        type: "doughnut",
+                        data: {
+                            labels: ["Le gustan", "No sabe / No compra"],
+                            datasets: [
+                                {
+                                    data: [80, 20],
+                                    backgroundColor: [
+                                        colors.blue,
+                                        colors.accent,
+                                    ],
+                                    hoverOffset: 10,
+                                    borderWidth: 0,
+                                },
+                            ],
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    labels: { padding: 20, font: { size: 13 } },
+                                },
+                            },
+                        },
+                    });
 
-secciones.forEach((seccion) => observador.observe(seccion));
-      const colors = {
-        blue: '#3eb7ff',
-        cyan: '#6be0ff',
-        dark: '#0c1b3a',
-        accent: '#ff6b6b'
-      };
+                    // Gráfico 2: Frecuencia de Consumo (Pie)
+                    new Chart(document.getElementById("chartFrecuencia"), {
+                        type: "pie",
+                        data: {
+                            labels: ["A veces", "Nunca"],
+                            datasets: [
+                                {
+                                    data: [80, 20],
+                                    backgroundColor: [colors.cyan, "#ffa502"],
+                                    borderWidth: 0,
+                                },
+                            ],
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    labels: { padding: 20, font: { size: 13 } },
+                                },
+                            },
+                        },
+                    });
 
-      Chart.defaults.color = '#e8f6ff';
-      Chart.defaults.font.family = 'Inter';
+                    // Gráfico 3: Espacios a Decorar (Bar horizontal)
+                    new Chart(document.getElementById("chartEspacios"), {
+                        type: "bar",
+                        data: {
+                            labels: ["Baño", "Sala", "Habitación", "Estudio"],
+                            datasets: [
+                                {
+                                    label: "Preferencia",
+                                    data: [5, 8, 8, 10],
+                                    backgroundColor: colors.blue,
+                                    borderRadius: 8,
+                                },
+                            ],
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            indexAxis: "y",
+                            scales: {
+                                x: { grid: { display: false } },
+                                y: { grid: { color: "rgba(255,255,255,0.1)" } },
+                            },
+                            plugins: {
+                                legend: { display: false },
+                            },
+                        },
+                    });
 
-      // Gráfico 1: Gusto
-      new Chart(document.getElementById('chartGusto'), {
-        type: 'doughnut',
-        data: {
-          labels: ['Le gustan', 'No sabe/No compra'],
-          datasets: [{
-            data: [80, 20],
-            backgroundColor: [colors.blue, colors.accent],
-            hoverOffset: 10,
-            borderWidth: 0
-          }]
-        },
-        options: { maintainAspectRatio: false }
-      });
-
-      // Gráfico 2: Frecuencia
-      new Chart(document.getElementById('chartFrecuencia'), {
-        type: 'pie',
-        data: {
-          labels: ['A veces', 'Nunca'],
-          datasets: [{
-            data: [80, 20],
-            backgroundColor: [colors.cyan, '#ffa502'],
-            borderWidth: 0
-          }]
-        },
-        options: { maintainAspectRatio: false }
-      });
-
-      // Gráfico 3: Espacios
-      new Chart(document.getElementById('chartEspacios'), {
-        type: 'bar',
-        data: {
-          labels: ['Baño', 'Sala', 'Habitación', 'Estudio'],
-          datasets: [{
-            label: 'Preferencia',
-            data: [5, 8, 8, 10],
-            backgroundColor: colors.blue,
-            borderRadius: 8
-          }]
-        },
-        options: {
-          indexAxis: 'y',
-          maintainAspectRatio: false,
-          scales: { x: { grid: { display: false } }, y: { grid: { color: 'rgba(255,255,255,0.1)' } } }
-        }
-      });
-
-      // Gráfico 4: Aromas
-      new Chart(document.getElementById('chartAromas'), {
-        type: 'bar',
-        data: {
-          labels: ['Lavanda', 'Vainilla', 'Canela', 'Otros'],
-          datasets: [{
-            label: 'Votos',
-            data: [7, 10, 5, 11],
-            backgroundColor: colors.cyan,
-            borderRadius: 8
-          }]
-        },
-        options: {
-          maintainAspectRatio: false,
-          scales: { y: { grid: { color: 'rgba(255,255,255,0.1)' }, beginAtZero: true } }
-        }
-      });
-    </script>
-  </body>
+                    // Gráfico 4: Preferencias Olfativas (Bar vertical)
+                    new Chart(document.getElementById("chartAromas"), {
+                        type: "bar",
+                        data: {
+                            labels: ["Lavanda", "Vainilla", "Canela", "Otros"],
+                            datasets: [
+                                {
+                                    label: "Votos",
+                                    data: [7, 10, 5, 11],
+                                    backgroundColor: colors.cyan,
+                                    borderRadius: 8,
+                                },
+                            ],
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    grid: { color: "rgba(255,255,255,0.1)" },
+                                    beginAtZero: true,
+                                },
+                            },
+                            plugins: {
+                                legend: { display: false },
+                            },
+                        },
+                    });
+                } else {
+                    console.warn(
+                        "Chart.js no se pudo cargar. Las gráficas no se mostrarán.",
+                    );
+                }
+            })();
+        </script>
+    </body>
 </html>
