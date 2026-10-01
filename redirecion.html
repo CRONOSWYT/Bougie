@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Bougie - Redirección. Shapes that decorate, aromas that surprise. Velas artesanales con diseño escultórico y aromas sorpresa."
+        />
+
+        <!-- Redirección automática a la página principal -->
+        <meta http-equiv="refresh" content="5; url=index.html" />
+
+        <title>Bougie - Redirigiendo…</title>
+        <link
+            rel="icon"
+            href="https://raw.githubusercontent.com/CRONOSWYT/Bougie/refs/heads/main/icons/Logo_BOUGIE.png"
+        />
+
+        <!-- Google Fonts: Inter -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Font Awesome (íconos) -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+            crossorigin="anonymous"
+        />
+
+        <style>
+            /* ════════════════════════════════════════════════════
+         VARIABLES Y BASE
+         ════════════════════════════════════════════════════ */
+            :root {
+                --primary: #3eb7ff;
+                --secondary: #6be0ff;
+                --bg-dark: #021235;
+                --card-bg: rgba(12, 27, 58, 0.7);
+                --glass-border: rgba(61, 182, 255, 0.25);
+            }
+
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                font-family: "Inter", Arial, sans-serif;
+                color: #e8f6ff;
+                background: radial-gradient(
+                    circle at top left,
+                    rgba(12, 38, 88, 1) 0%,
+                    var(--bg-dark) 100%
+                );
+                line-height: 1.6;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+            }
+
+            /* ════════════════════════════════════════════════════
+         NAVEGACIÓN FLOTANTE (GLASSMORPHISM)
+         ════════════════════════════════════════════════════ */
+            .nav-bougie {
+                position: fixed;
+                top: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 1000;
+                background: rgba(2, 18, 53, 0.85);
+                backdrop-filter: blur(12px);
+                border: 1px solid var(--glass-border);
+                padding: 10px 25px;
+                border-radius: 50px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+                display: flex;
+                gap: 20px;
+            }
+
+            .nav-bougie a {
+                color: #e8f6ff;
+                text-decoration: none;
+                font-size: 0.9rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                transition: all 0.3s ease;
+                padding: 5px 0;
+            }
+
+            .nav-bougie a:hover,
+            .nav-bougie a:focus {
+                color: var(--primary);
+                text-shadow: 0 0 10px rgba(62, 183, 255, 0.6);
+                outline: 2px solid var(--primary);
+                outline-offset: 2px;
+                border-radius: 4px;
+            }
+
+            .nav-bougie a.activo {
+                color: var(--primary);
+                border-bottom: 2px solid var(--primary);
+                text-shadow: 0 0 12px rgba(62, 183, 255, 0.8);
+            }
+
+            @media (max-width: 600px) {
+                .nav-bougie {
+                    width: 90%;
+                    justify-content: space-around;
+                    padding: 10px 15px;
+                    font-size: 0.75rem;
+                    gap: 8px;
+                }
+            }
+
+            /* ════════════════════════════════════════════════════
+         HEADER / HERO
+         ════════════════════════════════════════════════════ */
+            .icono {
+                text-align: center;
+                padding: 120px 20px 60px;
+                background: linear-gradient(
+                    180deg,
+                    rgba(4, 34, 76, 0.8),
+                    var(--bg-dark)
+                );
+                border-bottom: 1px solid var(--glass-border);
+                flex: 1;
+            }
+
+            .logo img {
+                width: 100%;
+                max-width: 200px;
+                filter: drop-shadow(0 0 15px rgba(62, 183, 255, 0.4));
+                margin-bottom: 25px;
+            }
+
+            .hero-text {
+                font-size: 1.2rem;
+                letter-spacing: 2px;
+                color: var(--secondary);
+                text-transform: uppercase;
+                margin-bottom: 10px;
+            }
+
+            .hero-subtext {
+                color: #a3c4e8;
+                font-size: 0.95rem;
+            }
+
+            /* ════════════════════════════════════════════════════
+         CONTENEDOR PRINCIPAL
+         ════════════════════════════════════════════════════ */
+            .espaciador {
+                max-width: min(1200px, 95%);
+                margin: 0 auto;
+                padding: 4rem 0;
+                flex: 1;
+            }
+
+            /* ════════════════════════════════════════════════════
+         TARJETA DE REDIRECCIÓN
+         ════════════════════════════════════════════════════ */
+            h2 {
+                font-size: 2rem;
+                margin-bottom: 30px;
+                color: var(--secondary);
+                text-align: center;
+                text-transform: uppercase;
+                letter-spacing: 3px;
+                position: relative;
+            }
+
+            h2::after {
+                content: "";
+                display: block;
+                width: 60px;
+                height: 3px;
+                background: var(--primary);
+                margin: 10px auto;
+            }
+
+            .tarjeta {
+                background: var(--card-bg);
+                backdrop-filter: blur(10px);
+                padding: 40px;
+                border-radius: 24px;
+                border: 1px solid var(--glass-border);
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+                max-width: 600px;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            .tarjeta h3 {
+                color: var(--primary);
+                margin-bottom: 20px;
+                font-size: 1.5rem;
+            }
+
+            .tarjeta p {
+                color: #a3c4e8;
+                margin-bottom: 25px;
+            }
+
+            /* Botón de enlace de redirección */
+            .btn-redirigir {
+                color: #e8f6ff;
+                text-decoration: none;
+                border: 1px solid var(--primary);
+                padding: 12px 32px;
+                border-radius: 50px;
+                transition: all 0.3s ease;
+                display: inline-block;
+                font-weight: 600;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                font-size: 0.9rem;
+            }
+
+            .btn-redirigir:hover,
+            .btn-redirigir:focus {
+                background: var(--primary);
+                color: white;
+                outline: 2px solid var(--primary);
+                outline-offset: 2px;
+            }
+
+            /* Contador regresivo */
+            .countdown {
+                font-size: 2rem;
+                font-weight: 700;
+                color: var(--secondary);
+                margin: 15px 0;
+            }
+
+            /* ════════════════════════════════════════════════════
+         FOOTER
+         ════════════════════════════════════════════════════ */
+            footer {
+                background: rgba(1, 10, 29, 0.95);
+                padding: 40px 20px;
+                text-align: center;
+                border-top: 1px solid var(--glass-border);
+            }
+
+            .footer-info {
+                max-width: 800px;
+                margin: 0 auto;
+            }
+
+            .footer-copy {
+                color: #a3c4e8;
+                font-size: 0.9rem;
+                margin-bottom: 10px;
+            }
+
+            .creadores {
+                font-weight: 700;
+                color: var(--secondary);
+                margin: 15px 0;
+                font-size: 1.1rem;
+            }
+
+            .email-link {
+                color: var(--primary);
+                text-decoration: none;
+                border: 1px solid var(--primary);
+                padding: 10px 25px;
+                border-radius: 50px;
+                transition: all 0.3s ease;
+                display: inline-block;
+            }
+
+            .email-link:hover,
+            .email-link:focus {
+                background: var(--primary);
+                color: white;
+                outline: 2px solid var(--primary);
+                outline-offset: 2px;
+            }
+
+            /* ════════════════════════════════════════════════════
+         BOTÓN FLOTANTE (Asistente Gemini)
+         ════════════════════════════════════════════════════ */
+            .bot-fab {
+                position: fixed;
+                bottom: 25px;
+                right: 25px;
+                z-index: 1000;
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                background: linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--secondary)
+                );
+                border: 1px solid var(--glass-border);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                cursor: pointer;
+            }
+
+            .bot-fab:hover,
+            .bot-fab:focus {
+                transform: scale(1.1) translateY(-3px);
+                box-shadow: 0 15px 40px rgba(62, 183, 255, 0.5);
+                outline: 2px solid var(--primary);
+                outline-offset: 4px;
+            }
+
+            .bot-fab i {
+                font-size: 28px;
+                color: white;
+            }
+
+            .bot-fab span {
+                position: absolute;
+                bottom: -34px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: rgba(2, 18, 53, 0.85);
+                backdrop-filter: blur(8px);
+                border: 1px solid var(--glass-border);
+                color: #e8f6ff;
+                font-size: 0.7rem;
+                padding: 4px 14px;
+                border-radius: 20px;
+                white-space: nowrap;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                pointer-events: none;
+            }
+
+            .bot-fab:hover span,
+            .bot-fab:focus span {
+                opacity: 1;
+            }
+
+            @media (max-width: 600px) {
+                .bot-fab {
+                    bottom: 15px;
+                    right: 15px;
+                    width: 60px;
+                    height: 60px;
+                }
+
+                .bot-fab i {
+                    font-size: 22px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- MENÚ FLOTANTE DE NAVEGACIÓN -->
+        <nav class="nav-bougie" aria-label="Menú de navegación principal">
+            <a href="index.html">Inicio</a>
+        </nav>
+
+        <header class="icono">
+            <div class="logo">
+                <img
+                    src="https://raw.githubusercontent.com/CRONOSWYT/Bougie/refs/heads/main/icons/Logo_BOUGIE.png"
+                    alt="Logo de Bougie"
+                />
+            </div>
+            <p class="hero-text"><strong>Bougie</strong></p>
+            <p class="hero-subtext">
+                Shapes that decorate, aromas that surprise.
+            </p>
+        </header>
+
+        <main class="espaciador">
+            <section>
+                <h2>Redirigiendo…</h2>
+                <div class="tarjeta">
+                    <h3>
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        Estás siendo redirigido
+                    </h3>
+                    <p>
+                        Serás llevado automáticamente a la página principal de
+                        Bougie en:
+                    </p>
+                    <div class="countdown" id="countdown">5</div>
+                    <p>
+                        Si no eres redirigido, puedes hacer clic en el siguiente
+                        enlace:
+                    </p>
+                    <a
+                        href="index.html"
+                        class="btn-redirigir"
+                        aria-label="Ir a la página principal de Bougie"
+                    >
+                        <i class="fa-solid fa-house"></i> Ir a la página principal
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <!-- ════════════════════════════════════ FOOTER ════════════════════════════════════ -->
+        <footer>
+            <div class="footer-info">
+                <p class="footer-copy">
+                    © 2026 BOUGIE - Formas que decoran, aromas que sorprenden.
+                </p>
+                <p class="creadores">
+                    Equipo: Pablo Bedoya, Nicolas Agudelo Sanint y Alexa Perdomo
+                    Agudelo
+                </p>
+                <a
+                    href="mailto:bougie.magique2026@gmail.com"
+                    class="email-link"
+                    >bougie.magique2026@gmail.com</a
+                >
+            </div>
+        </footer>
+
+        <!-- BOTÓN FLOTANTE: Asistente de Gemini -->
+        <a
+            href="https://gemini.google.com/gem/19jp6gpLYU47BwzDojwpcwbHi9by_gsHw?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bot-fab"
+            aria-label="Abrir asistente de Gemini"
+        >
+            <i class="fa-solid fa-comment-dots"></i>
+            <span>Asistente Gemini</span>
+        </a>
+
+        <script>
+            (function () {
+                "use strict";
+
+                /* --- CONTADOR REGRESIVO --- */
+                const tiempoRedireccion = 5; // segundos (debe coincidir con meta refresh)
+                const elementoContador =
+                    document.getElementById("countdown");
+                let segundosRestantes = tiempoRedireccion;
+
+                const intervalo = setInterval(() => {
+                    segundosRestantes--;
+                    elementoContador.textContent = segundosRestantes;
+
+                    if (segundosRestantes <= 0) {
+                        clearInterval(intervalo);
+                        elementoContador.textContent = "0";
+                        window.location.href = "index.html";
+                    }
+                }, 1000);
+            })();
+        </script>
+    </body>
+</html>
