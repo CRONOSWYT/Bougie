@@ -718,26 +718,51 @@
 
                     const observador = new IntersectionObserver(
                         (entradas) => {
-                            entradas.forEach((entrada) => {
-                                if (entrada.isIntersecting) {
-                                    const idSeccion =
-                                        entrada.target.getAttribute("id");
+                            /*
+                                BUG: antes se activaba la última sección
+                                procesada en el forEach, por lo que al
+                                cruzar el límite entre dos secciones se
+                                marcaba la siguiente (ej. "Valores"
+                                aunque estés en "Identidad").
 
-                                    enlacesNav.forEach((enlace) => {
-                                        enlace.classList.remove("activo");
-                                        if (
-                                            enlace.getAttribute("href") ===
-                                            "#" + idSeccion
-                                        ) {
-                                            enlace.classList.add("activo");
-                                        }
-                                    });
+                                SOLUCIÓN: entre todas las secciones que
+                                se intersectionan en este tick, activar
+                                solo la que tiene el mayor ratio de
+                                intersección (la más visible).
+                            */
+                            let seccionActiva = null;
+                            let maxRatio = 0;
+
+                            entradas.forEach((entrada) => {
+                                if (
+                                    entrada.isIntersecting &&
+                                    entrada.intersectionRatio > maxRatio
+                                ) {
+                                    maxRatio = entrada.intersectionRatio;
+                                    seccionActiva = entrada.target;
                                 }
                             });
+
+                            if (seccionActiva) {
+                                const idSeccion =
+                                    seccionActiva.getAttribute("id");
+
+                                enlacesNav.forEach((enlace) => {
+                                    enlace.classList.remove("activo");
+                                    if (
+                                        enlace.getAttribute("href") ===
+                                        "#" + idSeccion
+                                    ) {
+                                        enlace.classList.add("activo");
+                                    }
+                                });
+                            }
                         },
                         {
                             // Se activa cuando la sección está en el centro de la pantalla
                             rootMargin: "-30% 0px -50% 0px",
+                            // Umbrales múltiples para comparar qué sección está más visible
+                            threshold: [0, 0.25, 0.5, 0.75, 1],
                         },
                     );
 
