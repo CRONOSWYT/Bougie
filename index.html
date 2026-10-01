@@ -150,6 +150,22 @@
                 font-size: 0.95rem;
             }
 
+            /* Descripción en la sección de Inicio */
+            .descripcion-bougie {
+                margin-top: 30px;
+                max-width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: justify;
+                color: #a3c4e8;
+                font-size: 0.95rem;
+                line-height: 1.8;
+            }
+
+            .descripcion-bougie p {
+                margin-bottom: 15px;
+            }
+
             /* ════════════════════════════════════════════════════
        CONTENEDOR PRINCIPAL
          ════════════════════════════════════════════════════ */
@@ -490,188 +506,8 @@
             </p>
         </header>
 
-        <main class="espaciador">
-            <!-- ════════════════════════════════════ IDENTIDAD ════════════════════════════════════ -->
-            <section id="identidad">
-                <h2>Nuestra Identidad</h2>
-                <div class="tarjetas tarjetas-3">
-                    <div class="tarjeta">
-                        <h3>Misión</h3>
-                        <p>
-                            Transformar espacios cotidianos en escenarios de
-                            arte y misterio, ofreciendo velas artesanales que
-                            equilibran la estética visual con experiencias
-                            sensoriales inesperadas.
-                        </p>
-                    </div>
-                    <div class="tarjeta">
-                        <h3>Visión</h3>
-                        <p>
-                            Consolidarnos para el 2030 como la marca referente
-                            en decoración sensorial, innovando constantemente en
-                            el diseño escultórico y la sorpresa olfativa a nivel
-                            nacional.
-                        </p>
-                    </div>
-                    <div class="tarjeta">
-                        <h3>Factor Diferencial</h3>
-                        <p>
-                            A diferencia de lo convencional, nuestras piezas son
-                            arte decorativo desde el primer segundo. La magia
-                            reside en el aroma aleatorio: un descubrimiento
-                            sensorial dinámico en cada compra.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ════════════════════════════════════ VALORES ════════════════════════════════════ -->
-            <section id="valores">
-                <h2>Valores Empresariales</h2>
-                <div class="tarjetas tarjetas-3">
-                    <div class="tarjeta">
-                        <h3>Estética Artística</h3>
-                        <p>
-                            Creemos que una vela no solo debe iluminar, sino
-                            decorar. Priorizamos el diseño escultórico para que
-                            cada pieza sea una obra de arte exclusiva.
-                        </p>
-                    </div>
-                    <div class="tarjeta">
-                        <h3>Innovación Sensorial</h3>
-                        <p>
-                            Nos arriesgamos con el misterio. El factor sorpresa
-                            del aroma aleatorio es nuestro compromiso con una
-                            experiencia de cliente dinámica y emocionante.
-                        </p>
-                    </div>
-                    <div class="tarjeta">
-                        <h3>Armonía Integral</h3>
-                        <p>
-                            Buscamos el equilibrio perfecto entre el hogar, la
-                            oficina y el estudio, aportando bienestar a través
-                            de la mezcla de formas y fragancias agradables.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ════════════════════════════════════ ANÁLISIS DE MERCADO ════════════════════════════════════ -->
-            <section id="mercado">
-                <h2>Análisis de Mercado</h2>
-                <div class="grid-graficas">
-                    <div class="tarjeta tarjeta-grafica">
-                        <h3>Aceptación del Producto</h3>
-                        <div class="canvas-container">
-                            <canvas
-                                id="chartGusto"
-                                aria-label="Gráfico de aceptación del producto"
-                            ></canvas>
-                        </div>
-                    </div>
-                    <div class="tarjeta tarjeta-grafica">
-                        <h3>Frecuencia de Consumo</h3>
-                        <div class="canvas-container">
-                            <canvas
-                                id="chartFrecuencia"
-                                aria-label="Gráfico de frecuencia de consumo"
-                            ></canvas>
-                        </div>
-                    </div>
-                    <div class="tarjeta tarjeta-grafica">
-                        <h3>Espacios a Decorar</h3>
-                        <div class="canvas-container">
-                            <canvas
-                                id="chartEspacios"
-                                aria-label="Gráfico de espacios a decorar"
-                            ></canvas>
-                        </div>
-                    </div>
-                    <div class="tarjeta tarjeta-grafica">
-                        <h3>Preferencias Olfativas</h3>
-                        <div class="canvas-container">
-                            <canvas
-                                id="chartAromas"
-                                aria-label="Gráfico de preferencias olfativas"
-                            ></canvas>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ════════════════════════════════════ ENCUESTA ════════════════════════════════════ -->
-            <section id="encuesta">
-                <h2>Encuesta</h2>
-                <div class="iframe-container">
-                    <iframe
-                        src="https://docs.google.com/forms/d/e/1FAIpQLSegygjBsQcAyg4xwL0alRR2Ud9BL2LSPs5UCmqCLjFpGA-E8w/viewform?embedded=true"
-                        title="Encuesta de satisfacción de Bougie - Formas que decoran"
-                        referrerpolicy="no-referrer"
-                        allow="fullscreen"
-                    >
-                        <p>
-                            Tu navegador no soporta el iframe. Puedes acceder a
-                            la encuesta directamente en
-                            <a
-                                href="https://docs.google.com/forms/d/e/1FAIpQLSegygjBsQcAyg4xwL0alRR2Ud9BL2LSPs5UCmqCLjFpGA-E8w/viewform"
-                                target="_blank"
-                                rel="noopener"
-                                >este enlace</a
-                            >.
-                        </p>
-                    </iframe>
-                </div>
-            </section>
-
-            <!-- ════════════════════════════════════ GALERÍA ════════════════════════════════════ -->
-            <section id="galeria">
-                <h2>Galería de Productos</h2>
-                <div class="grid-galeria">
-                    <article class="tarjeta-galeria tarjeta-destacada">
-                        <img
-                            loading="lazy"
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCbN-YIcMxSlA4T8YHbtQognqed31F-7d7bzQaLpzFdQ&s=10"
-                            alt="Velas Bougie en forma de Yin Yang"
-                        />
-                        <div class="info-galeria">
-                            <h3>Yin Yang</h3>
-                        </div>
-                    </article>
-
-                    <article class="tarjeta-galeria">
-                        <img
-                            loading="lazy"
-                            src="http://www.sunbeamcandles.com/cdn/shop/files/Natural-Handcrafted-100_-Beeswax-Candle-non-toxic-emergency-highest-rated-long-burning-Unscented-Large-Red-carved-Rose-Sculpted-Candle-Valentines-unique-trending-home-gifts-grande-flower-love3_1200x1200.png?v=1723673812"
-                            alt="Velas Bougie talladas en forma de rosa"
-                        />
-                        <div class="info-galeria">
-                            <h3>Rosas</h3>
-                        </div>
-                    </article>
-
-                    <article class="tarjeta-galeria">
-                        <img
-                            loading="lazy"
-                            src="https://bcdn.vendora.gr/0/a9/00/a9008e6f6cccf42ceead33719f74e74ea5373a06.jpg?class=lsq"
-                            alt="Velas Bougie con diseño de temática Minecraft"
-                        />
-                        <div class="info-galeria">
-                            <h3>Minecraft</h3>
-                        </div>
-                    </article>
-
-                    <article class="tarjeta-galeria tarjeta-ancha">
-                        <img
-                            loading="lazy"
-                            src="https://i.etsystatic.com/41768317/r/il/dfab68/6037167740/il_500x500.6037167740_q7r7.jpg"
-                            alt="Velas tipo pilar Bougie en display"
-                        />
-                        <div class="info-galeria">
-                            <h3>Pillar candles</h3>
-                        </div>
-                    </article>
-                </div>
-            </section>
+        <main id="contenido" class="espaciador">
+            <!-- El contenido se inyecta dinámicamente con JavaScript -->
         </main>
 
         <!-- ════════════════════════════════════ FOOTER ════════════════════════════════════ -->
@@ -708,69 +544,331 @@
             (function () {
                 "use strict";
 
-                /* --- SISTEMA DE SECCIÓN ACTIVA (SCROLLSPY) --- */
-                if (typeof IntersectionObserver !== "undefined") {
-                    const secciones = document.querySelectorAll(
-                        "header[id], section[id]",
-                    );
+                /* ════════════════════════════════════════════════════
+                   SISTEMA DE CONDICIONALES (Navegación por índice)
+                   ════════════════════════════════════════════════════
+
+                    Todas las secciones del índice están almacenadas
+                    como strings HTML en el objeto `contenidos`.
+
+                    Al hacer clic en una opción del menú, un sistema
+                    de condicionales (if/else) toma el HTML
+                    correspondiente y lo inyecta en:
+                        <main id="contenido">
+
+                    Las opciones del índice son:
+                        Inicio, Identidad, Valores, Mercado, Encuesta, Galería
+                ════════════════════════════════════════════════════ */
+
+                /* ════════════════════════════════════
+                   OBJETO CON EL HTML DE CADA SECCIÓN
+                   ════════════════════════════════════ */
+                const contenidos = {
+
+                    /* --- INICIO --- */
+                    inicio: `
+                        <div class="descripcion-bougie">
+                            <p>
+                                BOUGIE es un emprendimiento enfocado en la elaboración
+                                de velas aromáticas y con formas artísticas, creado por
+                                Pablo Bedoya, Nicolas Agudelo Sanint y Alexa Perdomo
+                                Agudelo. La iniciativa nace para responder a la necesidad
+                                de integrar armonía estética y fragancias agradables en
+                                diversos entornos, tales como el hogar, la oficina o la
+                                zona de estudio. Dirigido a un público de todas las
+                                edades, el producto ofrece una propuesta donde cada
+                                pieza funciona como una escultura decorativa exclusiva
+                                desde el primer instante.
+                            </p>
+                            <p>
+                                El factor diferencial de la marca radica en la
+                                combinación entre el diseño visual y el concepto de
+                                fragancia sorpresiva. A diferencia de las opciones
+                                convencionales del mercado, BOUGIE elabora velas
+                                artesanales con figuras variadas —que abarcan desde
+                                elementos de la cultura pop como un Creeper de Minecraft
+                                hasta formas orgánicas como flores— asignando a cada
+                                diseño un aroma aleatorio. De esta manera, una misma
+                                forma puede incorporar distintas esencias, transformando
+                                el uso cotidiano en un descubrimiento sensorial
+                                dinámico e inesperado.
+                            </p>
+                        </div>
+                    `,
+
+                    /* --- IDENTIDAD --- */
+                    identidad: `
+                        <section id="identidad">
+                            <h2>Nuestra Identidad</h2>
+                            <div class="tarjetas tarjetas-3">
+                                <div class="tarjeta">
+                                    <h3>Misión</h3>
+                                    <p>
+                                        Transformar espacios cotidianos en escenarios de
+                                        arte y misterio, ofreciendo velas artesanales que
+                                        equilibran la estética visual con experiencias
+                                        sensoriales inesperadas.
+                                    </p>
+                                </div>
+                                <div class="tarjeta">
+                                    <h3>Visión</h3>
+                                    <p>
+                                        Consolidarnos para el 2030 como la marca referente
+                                        en decoración sensorial, innovando constantemente en
+                                        el diseño escultórico y la sorpresa olfativa a nivel
+                                        nacional.
+                                    </p>
+                                </div>
+                                <div class="tarjeta">
+                                    <h3>Factor Diferencial</h3>
+                                    <p>
+                                        A diferencia de lo convencional, nuestras piezas son
+                                        arte decorativo desde el primer segundo. La magia
+                                        reside en el aroma aleatorio: un descubrimiento
+                                        sensorial dinámico en cada compra.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+                    `,
+
+                    /* --- VALORES --- */
+                    valores: `
+                        <section id="valores">
+                            <h2>Valores Empresariales</h2>
+                            <div class="tarjetas tarjetas-3">
+                                <div class="tarjeta">
+                                    <h3>Estética Artística</h3>
+                                    <p>
+                                        Creemos que una vela no solo debe iluminar, sino
+                                        decorar. Priorizamos el diseño escultórico para que
+                                        cada pieza sea una obra de arte exclusiva.
+                                    </p>
+                                </div>
+                                <div class="tarjeta">
+                                    <h3>Innovación Sensorial</h3>
+                                    <p>
+                                        Nos arriesgamos con el misterio. El factor sorpresa
+                                        del aroma aleatorio es nuestro compromiso con una
+                                        experiencia de cliente dinámica y emocionante.
+                                    </p>
+                                </div>
+                                <div class="tarjeta">
+                                    <h3>Armonía Integral</h3>
+                                    <p>
+                                        Buscamos el equilibrio perfecto entre el hogar, la
+                                        oficina y el estudio, aportando bienestar a través
+                                        de la mezcla de formas y fragancias agradables.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+                    `,
+
+                    /* --- MERCADO --- */
+                    mercado: `
+                        <section id="mercado">
+                            <h2>Análisis de Mercado</h2>
+                            <div class="grid-graficas">
+                                <div class="tarjeta tarjeta-grafica">
+                                    <h3>Aceptación del Producto</h3>
+                                    <div class="canvas-container">
+                                        <canvas
+                                            id="chartGusto"
+                                            aria-label="Gráfico de aceptación del producto"
+                                        ></canvas>
+                                    </div>
+                                </div>
+                                <div class="tarjeta tarjeta-grafica">
+                                    <h3>Frecuencia de Consumo</h3>
+                                    <div class="canvas-container">
+                                        <canvas
+                                            id="chartFrecuencia"
+                                            aria-label="Gráfico de frecuencia de consumo"
+                                        ></canvas>
+                                    </div>
+                                </div>
+                                <div class="tarjeta tarjeta-grafica">
+                                    <h3>Espacios a Decorar</h3>
+                                    <div class="canvas-container">
+                                        <canvas
+                                            id="chartEspacios"
+                                            aria-label="Gráfico de espacios a decorar"
+                                        ></canvas>
+                                    </div>
+                                </div>
+                                <div class="tarjeta tarjeta-grafica">
+                                    <h3>Preferencias Olfativas</h3>
+                                    <div class="canvas-container">
+                                        <canvas
+                                            id="chartAromas"
+                                            aria-label="Gráfico de preferencias olfativas"
+                                        ></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    `,
+
+                    /* --- ENCUESTA --- */
+                    encuesta: `
+                        <section id="encuesta">
+                            <h2>Encuesta</h2>
+                            <div class="iframe-container">
+                                <iframe
+                                    src="https://docs.google.com/forms/d/e/1FAIpQLSegygjBsQcAyg4xwL0alRR2Ud9BL2LSPs5UCmqCLjFpGA-E8w/viewform?embedded=true"
+                                    title="Encuesta de satisfacción de Bougie - Formas que decoran"
+                                    referrerpolicy="no-referrer"
+                                    allow="fullscreen"
+                                >
+                                    <p>
+                                        Tu navegador no soporta el iframe. Puedes acceder a
+                                        la encuesta directamente en
+                                        <a
+                                            href="https://docs.google.com/forms/d/e/1FAIpQLSegygjBsQcAyg4xwL0alRR2Ud9BL2LSPs5UCmqCLjFpGA-E8w/viewform"
+                                            target="_blank"
+                                            rel="noopener"
+                                            >este enlace</a
+                                        >.
+                                    </p>
+                                </iframe>
+                            </div>
+                        </section>
+                    `,
+
+                    /* --- GALERÍA --- */
+                    galeria: `
+                        <section id="galeria">
+                            <h2>Galería de Productos</h2>
+                            <div class="grid-galeria">
+                                <article class="tarjeta-galeria tarjeta-destacada">
+                                    <img
+                                        loading="lazy"
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCbN-YIcMxSlA4T8YHbtQognqed31F-7d7bzQaLpzFdQ&s=10"
+                                        alt="Velas Bougie en forma de Yin Yang"
+                                    />
+                                    <div class="info-galeria">
+                                        <h3>Yin Yang</h3>
+                                    </div>
+                                </article>
+
+                                <article class="tarjeta-galeria">
+                                    <img
+                                        loading="lazy"
+                                        src="http://www.sunbeamcandles.com/cdn/shop/files/Natural-Handcrafted-100_-Beeswax-Candle-non-toxic-emergency-highest-rated-long-burning-Unscented-Large-Red-carved-Rose-Sculpted-Candle-Valentines-unique-trending-home-gifts-grande-flower-love3_1200x1200.png?v=1723673812"
+                                        alt="Velas Bougie talladas en forma de rosa"
+                                    />
+                                    <div class="info-galeria">
+                                        <h3>Rosas</h3>
+                                    </div>
+                                </article>
+
+                                <article class="tarjeta-galeria">
+                                    <img
+                                        loading="lazy"
+                                        src="https://bcdn.vendora.gr/0/a9/00/a9008e6f6cccf42ceead33719f74e74ea5373a06.jpg?class=lsq"
+                                        alt="Velas Bougie con diseño de temática Minecraft"
+                                    />
+                                    <div class="info-galeria">
+                                        <h3>Minecraft</h3>
+                                    </div>
+                                </article>
+
+                                <article class="tarjeta-galeria tarjeta-ancha">
+                                    <img
+                                        loading="lazy"
+                                        src="https://i.etsystatic.com/41768317/r/il/dfab68/6037167740/il_500x500.6037167740_q7r7.jpg"
+                                        alt="Velas tipo pilar Bougie en display"
+                                    />
+                                    <div class="info-galeria">
+                                        <h3>Pillar candles</h3>
+                                    </div>
+                                </article>
+                            </div>
+                        </section>
+                    `,
+                };
+
+                /* ════════════════════════════════════════════════════
+                   FUNCIÓN: mostrarSección (sistema de condicionales)
+                   ════════════════════════════════════════════════════ */
+                function mostrarSeccion(idSeccion) {
+                    const contenedor =
+                        document.getElementById("contenido");
+
+                    /*
+                        Sistema de condicionales: según el ID que reciba,
+                        toma el HTML del objeto `contenidos` y lo inyecta
+                        en el contenedor principal.
+                    */
+                    if (idSeccion === "inicio") {
+                        contenedor.innerHTML = contenidos.inicio;
+                    } else if (idSeccion === "identidad") {
+                        contenedor.innerHTML = contenidos.identidad;
+                    } else if (idSeccion === "valores") {
+                        contenedor.innerHTML = contenidos.valores;
+                    } else if (idSeccion === "mercado") {
+                        contenedor.innerHTML = contenidos.mercado;
+                        // Al mostrar Mercado, inicializar las gráficas
+                        inicializarGraficas();
+                    } else if (idSeccion === "encuesta") {
+                        contenedor.innerHTML = contenidos.encuesta;
+                    } else if (idSeccion === "galeria") {
+                        contenedor.innerHTML = contenidos.galeria;
+                    } else {
+                        // Por defecto: mostrar Inicio
+                        contenedor.innerHTML = contenidos.inicio;
+                        idSeccion = "inicio";
+                    }
+
+                    /* --- Actualizar enlaces activos en la navegación --- */
                     const enlacesNav =
                         document.querySelectorAll(".nav-bougie a");
-
-                    const observador = new IntersectionObserver(
-                        (entradas) => {
-                            /*
-                                BUG: antes se activaba la última sección
-                                procesada en el forEach, por lo que al
-                                cruzar el límite entre dos secciones se
-                                marcaba la siguiente (ej. "Valores"
-                                aunque estés en "Identidad").
-
-                                SOLUCIÓN: entre todas las secciones que
-                                se intersectionan en este tick, activar
-                                solo la que tiene el mayor ratio de
-                                intersección (la más visible).
-                            */
-                            let seccionActiva = null;
-                            let maxRatio = 0;
-
-                            entradas.forEach((entrada) => {
-                                if (
-                                    entrada.isIntersecting &&
-                                    entrada.intersectionRatio > maxRatio
-                                ) {
-                                    maxRatio = entrada.intersectionRatio;
-                                    seccionActiva = entrada.target;
-                                }
-                            });
-
-                            if (seccionActiva) {
-                                const idSeccion =
-                                    seccionActiva.getAttribute("id");
-
-                                enlacesNav.forEach((enlace) => {
-                                    enlace.classList.remove("activo");
-                                    if (
-                                        enlace.getAttribute("href") ===
-                                        "#" + idSeccion
-                                    ) {
-                                        enlace.classList.add("activo");
-                                    }
-                                });
-                            }
-                        },
-                        {
-                            // Se activa cuando la sección está en el centro de la pantalla
-                            rootMargin: "-30% 0px -50% 0px",
-                            // Umbrales múltiples para comparar qué sección está más visible
-                            threshold: [0, 0.25, 0.5, 0.75, 1],
-                        },
-                    );
-
-                    secciones.forEach((seccion) => observador.observe(seccion));
+                    enlacesNav.forEach((enlace) => {
+                        enlace.classList.remove("activo");
+                        if (
+                            enlace.getAttribute("href") ===
+                            "#" + idSeccion
+                        ) {
+                            enlace.classList.add("activo");
+                        }
+                    });
                 }
 
-                /* --- GRÁFICAS (Chart.js) --- */
-                if (typeof Chart !== "undefined") {
+                /* ════════════════════════════════════════════════════
+                   VINCULAR CLICs EN EL MENÚ DE NAVEGACIÓN
+                   ════════════════════════════════════════════════════ */
+                const enlacesNav =
+                    document.querySelectorAll(".nav-bougie a");
+                enlacesNav.forEach((enlace) => {
+                    enlace.addEventListener("click", (e) => {
+                        e.preventDefault();
+                        // Extraer el ID del href (#identidad → "identidad")
+                        const idSeccion =
+                            enlace.getAttribute("href").substring(1);
+                        mostrarSeccion(idSeccion);
+                    });
+                });
+
+                /* ════════════════════════════════════════════════════
+                   MOSTRAR "INICIO" POR DEFECTO AL CARGAR LA PÁGINA
+                   ════════════════════════════════════════════════════ */
+                mostrarSeccion("inicio");
+
+                /* ════════════════════════════════════════════════════
+                   GRÁFICAS (Chart.js) — se crean al mostrar "Mercado"
+                   ════════════════════════════════════════════════════ */
+                let graficasCreadas = false;
+                let instanciasGraficas = {};
+
+                function inicializarGraficas() {
+                    if (typeof Chart === "undefined") {
+                        console.warn(
+                            "Chart.js no se pudo cargar. Las gráficas no se mostrarán."
+                        );
+                        return;
+                    }
+
                     const colors = {
                         blue: "#3eb7ff",
                         cyan: "#6be0ff",
@@ -781,118 +879,149 @@
                     Chart.defaults.color = "#e8f6ff";
                     Chart.defaults.font.family = "Inter";
 
+                    // Destruir instancias anteriores para evitar duplicados
+                    Object.values(instanciasGraficas).forEach((g) =>
+                        g.destroy()
+                    );
+                    instanciasGraficas = {};
+
                     // Gráfico 1: Aceptación del Producto (Doughnut)
-                    new Chart(document.getElementById("chartGusto"), {
-                        type: "doughnut",
-                        data: {
-                            labels: ["Le gustan", "No sabe / No compra"],
-                            datasets: [
-                                {
-                                    data: [80, 20],
-                                    backgroundColor: [
-                                        colors.blue,
-                                        colors.accent,
-                                    ],
-                                    hoverOffset: 10,
-                                    borderWidth: 0,
-                                },
-                            ],
-                        },
-                        options: {
-                            responsive: true,
-                            maintainAspectRatio: false,
-                            plugins: {
-                                legend: {
-                                    labels: { padding: 20, font: { size: 13 } },
+                    instanciasGraficas.gusto = new Chart(
+                        document.getElementById("chartGusto"),
+                        {
+                            type: "doughnut",
+                            data: {
+                                labels: ["Le gustan", "No sabe / No compra"],
+                                datasets: [
+                                    {
+                                        data: [80, 20],
+                                        backgroundColor: [
+                                            colors.blue,
+                                            colors.accent,
+                                        ],
+                                        hoverOffset: 10,
+                                        borderWidth: 0,
+                                    },
+                                ],
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    legend: {
+                                        labels: {
+                                            padding: 20,
+                                            font: { size: 13 },
+                                        },
+                                    },
                                 },
                             },
-                        },
-                    });
+                        }
+                    );
 
                     // Gráfico 2: Frecuencia de Consumo (Pie)
-                    new Chart(document.getElementById("chartFrecuencia"), {
-                        type: "pie",
-                        data: {
-                            labels: ["A veces", "Nunca"],
-                            datasets: [
-                                {
-                                    data: [80, 20],
-                                    backgroundColor: [colors.cyan, "#ffa502"],
-                                    borderWidth: 0,
-                                },
-                            ],
-                        },
-                        options: {
-                            responsive: true,
-                            maintainAspectRatio: false,
-                            plugins: {
-                                legend: {
-                                    labels: { padding: 20, font: { size: 13 } },
+                    instanciasGraficas.frecuencia = new Chart(
+                        document.getElementById("chartFrecuencia"),
+                        {
+                            type: "pie",
+                            data: {
+                                labels: ["A veces", "Nunca"],
+                                datasets: [
+                                    {
+                                        data: [80, 20],
+                                        backgroundColor: [
+                                            colors.cyan,
+                                            "#ffa502",
+                                        ],
+                                        borderWidth: 0,
+                                    },
+                                ],
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    legend: {
+                                        labels: {
+                                            padding: 20,
+                                            font: { size: 13 },
+                                        },
+                                    },
                                 },
                             },
-                        },
-                    });
+                        }
+                    );
 
                     // Gráfico 3: Espacios a Decorar (Bar horizontal)
-                    new Chart(document.getElementById("chartEspacios"), {
-                        type: "bar",
-                        data: {
-                            labels: ["Baño", "Sala", "Habitación", "Estudio"],
-                            datasets: [
-                                {
-                                    label: "Preferencia",
-                                    data: [5, 8, 8, 10],
-                                    backgroundColor: colors.blue,
-                                    borderRadius: 8,
+                    instanciasGraficas.espacios = new Chart(
+                        document.getElementById("chartEspacios"),
+                        {
+                            type: "bar",
+                            data: {
+                                labels: ["Baño", "Sala", "Habitación", "Estudio"],
+                                datasets: [
+                                    {
+                                        label: "Preferencia",
+                                        data: [5, 8, 8, 10],
+                                        backgroundColor: colors.blue,
+                                        borderRadius: 8,
+                                    },
+                                ],
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                indexAxis: "y",
+                                scales: {
+                                    x: { grid: { display: false } },
+                                    y: {
+                                        grid: {
+                                            color: "rgba(255,255,255,0.1)",
+                                        },
+                                    },
                                 },
-                            ],
-                        },
-                        options: {
-                            responsive: true,
-                            maintainAspectRatio: false,
-                            indexAxis: "y",
-                            scales: {
-                                x: { grid: { display: false } },
-                                y: { grid: { color: "rgba(255,255,255,0.1)" } },
+                                plugins: {
+                                    legend: { display: false },
+                                },
                             },
-                            plugins: {
-                                legend: { display: false },
-                            },
-                        },
-                    });
+                        }
+                    );
 
                     // Gráfico 4: Preferencias Olfativas (Bar vertical)
-                    new Chart(document.getElementById("chartAromas"), {
-                        type: "bar",
-                        data: {
-                            labels: ["Lavanda", "Vainilla", "Canela", "Otros"],
-                            datasets: [
-                                {
-                                    label: "Votos",
-                                    data: [7, 10, 5, 11],
-                                    backgroundColor: colors.cyan,
-                                    borderRadius: 8,
+                    instanciasGraficas.aromas = new Chart(
+                        document.getElementById("chartAromas"),
+                        {
+                            type: "bar",
+                            data: {
+                                labels: ["Lavanda", "Vainilla", "Canela", "Otros"],
+                                datasets: [
+                                    {
+                                        label: "Votos",
+                                        data: [7, 10, 5, 11],
+                                        backgroundColor: colors.cyan,
+                                        borderRadius: 8,
+                                    },
+                                ],
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                scales: {
+                                    y: {
+                                        grid: {
+                                            color: "rgba(255,255,255,0.1)",
+                                        },
+                                        beginAtZero: true,
+                                    },
                                 },
-                            ],
-                        },
-                        options: {
-                            responsive: true,
-                            maintainAspectRatio: false,
-                            scales: {
-                                y: {
-                                    grid: { color: "rgba(255,255,255,0.1)" },
-                                    beginAtZero: true,
+                                plugins: {
+                                    legend: { display: false },
                                 },
                             },
-                            plugins: {
-                                legend: { display: false },
-                            },
-                        },
-                    });
-                } else {
-                    console.warn(
-                        "Chart.js no se pudo cargar. Las gráficas no se mostrarán.",
+                        }
                     );
+
+                    graficasCreadas = true;
                 }
             })();
         </script>
