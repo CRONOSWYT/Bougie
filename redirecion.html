@@ -398,7 +398,7 @@
                         Serás llevado automáticamente a la página principal de
                         Bougie en:
                     </p>
-                    <div class="countdown" id="countdown">5</div>
+                    <div class="countdown" id="countdown">1</div>
                     <p>
                         Si no eres redirigido, puedes hacer clic en el siguiente
                         enlace:
@@ -449,7 +449,7 @@
                 "use strict";
 
                 /* --- CONTADOR REGRESIVO --- */
-                const tiempoRedireccion = 5; // segundos (debe coincidir con meta refresh)
+                const tiempoRedireccion = 1; // segundos (debe coincidir con meta refresh)
                 const elementoContador =
                     document.getElementById("countdown");
                 let segundosRestantes = tiempoRedireccion;
@@ -463,7 +463,7 @@
                         elementoContador.textContent = "0";
                         window.location.href = "index.html";
                     }
-                }, 1000);
+                }, 100);
             })();
         </script>
     </body>
