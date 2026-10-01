@@ -152,18 +152,53 @@
 
             /* Descripción en la sección de Inicio */
             .descripcion-bougie {
-                margin-top: 30px;
-                max-width: 800px;
-                margin-left: auto;
-                margin-right: auto;
-                text-align: justify;
                 color: #a3c4e8;
-                font-size: 0.95rem;
+                font-size: 1rem;
                 line-height: 1.8;
+                text-align: justify;
             }
 
             .descripcion-bougie p {
                 margin-bottom: 15px;
+            }
+
+            .descripcion-bougie p:last-child {
+                margin-bottom: 0;
+            }
+
+            /* Tarjeta centrada en la sección de Inicio */
+            #inicio-info .tarjeta {
+                max-width: 800px;
+                margin: 0 auto;
+            }
+
+            /* Indicio visual: invita a explorar el menú */
+            .invita-explorar {
+                margin-top: 30px;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                color: var(--secondary);
+                font-size: 0.85rem;
+                opacity: 0.9;
+            }
+
+            .invita-explorar i {
+                color: var(--primary);
+                font-size: 1.3rem;
+                animation: pulse 2s infinite;
+            }
+
+            @keyframes pulse {
+                0%,
+                100% {
+                    opacity: 0.4;
+                }
+                50% {
+                    opacity: 1;
+                }
             }
 
             /* ════════════════════════════════════════════════════
@@ -567,33 +602,43 @@
 
                     /* --- INICIO --- */
                     inicio: `
-                        <div class="descripcion-bougie">
-                            <p>
-                                BOUGIE es un emprendimiento enfocado en la elaboración
-                                de velas aromáticas y con formas artísticas, creado por
-                                Pablo Bedoya, Nicolas Agudelo Sanint y Alexa Perdomo
-                                Agudelo. La iniciativa nace para responder a la necesidad
-                                de integrar armonía estética y fragancias agradables en
-                                diversos entornos, tales como el hogar, la oficina o la
-                                zona de estudio. Dirigido a un público de todas las
-                                edades, el producto ofrece una propuesta donde cada
-                                pieza funciona como una escultura decorativa exclusiva
-                                desde el primer instante.
-                            </p>
-                            <p>
-                                El factor diferencial de la marca radica en la
-                                combinación entre el diseño visual y el concepto de
-                                fragancia sorpresiva. A diferencia de las opciones
-                                convencionales del mercado, BOUGIE elabora velas
-                                artesanales con figuras variadas —que abarcan desde
-                                elementos de la cultura pop como un Creeper de Minecraft
-                                hasta formas orgánicas como flores— asignando a cada
-                                diseño un aroma aleatorio. De esta manera, una misma
-                                forma puede incorporar distintas esencias, transformando
-                                el uso cotidiano en un descubrimiento sensorial
-                                dinámico e inesperado.
-                            </p>
-                        </div>
+                        <section id="inicio-info">
+                            <h2>Bienvenido a BOUGIE</h2>
+                            <div class="tarjeta">
+                                <div class="descripcion-bougie">
+                                    <p>
+                                        BOUGIE es un emprendimiento enfocado en la elaboración
+                                        de velas aromáticas y con formas artísticas, creado por
+                                        Pablo Bedoya, Nicolas Agudelo Sanint y Alexa Perdomo
+                                        Agudelo. La iniciativa nace para responder a la necesidad
+                                        de integrar armonía estética y fragancias agradables en
+                                        diversos entornos, tales como el hogar, la oficina o la
+                                        zona de estudio. Dirigido a un público de todas las
+                                        edades, el producto ofrece una propuesta donde cada
+                                        pieza funciona como una escultura decorativa exclusiva
+                                        desde el primer instante.
+                                    </p>
+                                    <p>
+                                        El factor diferencial de la marca radica en la
+                                        combinación entre el diseño visual y el concepto de
+                                        fragancia sorpresiva. A diferencia de las opciones
+                                        convencionales del mercado, BOUGIE elabora velas
+                                        artesanales con figuras variadas —que abarcan desde
+                                        elementos de la cultura pop como un Creeper de Minecraft
+                                        hasta formas orgánicas como flores— asignando a cada
+                                        diseño un aroma aleatorio. De esta manera, una misma
+                                        forma puede incorporar distintas esencias, transformando
+                                        el uso cotidiano en un descubrimiento sensorial
+                                        dinámico e inesperado.
+                                    </p>
+                                </div>
+
+                                <div class="invita-explorar">
+                                    <i class="fa-solid fa-mouse"></i>
+                                    <span>Explora el menú de arriba para conocer más</span>
+                                </div>
+                            </div>
+                        </section>
                     `,
 
                     /* --- IDENTIDAD --- */
