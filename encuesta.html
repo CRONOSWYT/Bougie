@@ -3,9 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Bougie - Shapes that decorate, aromas that surprise. Velas artesanales con diseño escultórico y aromas sorpresa." />
-        <title>Bougie - Formas que decoran, aromas que sorprenden</title>
+        <meta name="description" content="Participa en la encuesta de satisfacción de BOUGIE." />
+        <title>Bougie - Encuesta</title>
         <link rel="icon" href="https://raw.githubusercontent.com/CRONOSWYT/Bougie/refs/heads/main/icons/Logo_BOUGIE.png" />
+        
         <!-- Google Fonts: Inter -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,12 +14,14 @@
             href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
         />
+        
         <!-- Font Awesome -->
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
             crossorigin="anonymous"
         />
+        
         <style>
 /* ════════════════════════════════════════════════════
    VARIABLES Y BASE
@@ -51,10 +54,9 @@ body {
     flex-direction: column;
 }
 
-
 .icono {
     text-align: center;
-    padding: 120px 20px 80px;
+    padding: 80px 20px 40px;
     background: linear-gradient(
         180deg,
         rgba(4, 34, 76, 0.8),
@@ -133,9 +135,10 @@ body {
    CONTENEDOR PRINCIPAL
    ════════════════════════════════════════════════════ */
 .espaciador {
-    max-width: min(1200px, 95%);
+    width: 100%;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 4rem 0;
+    padding: 2rem 1rem;
     flex: 1;
 }
 
@@ -251,7 +254,7 @@ h2::after {
     display: inline-block;
 }
 
-/* Gráfica de barras (div-bases, sin JS) */
+/* Gráfica de barras */
 .bar-chart {
     width: 100%;
     max-width: 400px;
@@ -293,7 +296,6 @@ h2::after {
     min-width: 2px;
 }
 
-/* Para gráficas de barras verticales (SVG) */
 .bar-chart-svg {
     width: 100%;
     max-width: 400px;
@@ -307,24 +309,32 @@ h2::after {
 }
 
 /* ════════════════════════════════════════════════════
-   ENCUESTA (IFRAME)
+   ENCUESTA (IFRAME CORREGIDO Y ADAPTATIVO)
    ════════════════════════════════════════════════════ */
 .iframe-container {
+    width: 100%;
+    max-width: 100%;
+    background: var(--card-bg);
     border-radius: 16px;
     border: 1px solid var(--glass-border);
     overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
 }
 
 .iframe-container iframe {
     width: 100%;
-    height: 1000px;
+    height: 75vh;
+    min-height: 600px;
+    max-height: 900px;
     border: 0;
     display: block;
 }
 
 @media (max-width: 600px) {
     .iframe-container iframe {
-        height: 1400px;
+        height: 80vh;
+        min-height: 500px;
     }
 }
 
@@ -561,7 +571,6 @@ footer {
     padding: 10px 0;
     border-top: 1px solid var(--glass-border);
 }
-
         </style>
     </head>
     <body>
@@ -576,36 +585,26 @@ footer {
             </p>
         </header>
         <main class="espaciador">
-            <section id="inicio-info">
-                <h2>Bienvenido a BOUGIE</h2>
-                <div class="tarjeta">
-                    <div class="descripcion-bougie">
+            <section id="encuesta">
+                <h2>Encuesta</h2>
+                <div class="iframe-container">
+                    <iframe
+                        src="https://docs.google.com/forms/d/e/1FAIpQLSegygjBsQcAyg4xwL0alRR2Ud9BL2LSPs5UCmqCLjFpGA-E8w/viewform?embedded=true"
+                        title="Encuesta de satisfacción de Bougie - Formas que decoran"
+                        referrerpolicy="no-referrer"
+                        allow="fullscreen"
+                    >
                         <p>
-                            BOUGIE es un emprendimiento enfocado en la elaboración
-                            de velas aromáticas y con formas artísticas, creado por
-                            Pablo Bedoya, Nicolas Agudelo Sanint y Alexa Perdomo
-                            Agudelo. La iniciativa nace para responder a la necesidad
-                            de integrar armonía estética y fragancias agradables en
-                            diversos entornos, tales como el hogar, la oficina o la
-                            zona de estudio. Dirigido a un público de todas las
-                            edades, el producto ofrece una propuesta donde cada
-                            pieza funciona como una escultura decorativa exclusiva
-                            desde el primer instante.
+                            Tu navegador no soporta el iframe. Puedes acceder a
+                            la encuesta directamente en
+                            <a
+                                href="https://docs.google.com/forms/d/e/1FAIpQLSegygjBsQcAyg4xwL0alRR2Ud9BL2LSPs5UCmqCLjFpGA-E8w/viewform"
+                                target="_blank"
+                                rel="noopener"
+                                >este enlace</a
+                            >.
                         </p>
-                        <p>
-                            El factor diferencial de la marca radica en la
-                            combinación entre el diseño visual y el concepto de
-                            fragancia sorpresiva. A diferencia de las opciones
-                            convencionales del mercado, BOUGIE elabora velas
-                            artesanales con figuras variadas —que abarcan desde
-                            elementos de la cultura pop como un Creeper de Minecraft
-                            hasta formas orgánicas como flores— asignando a cada
-                            diseño un aroma aleatorio. De esta manera, una misma
-                            forma puede incorporar distintas esencias, transformando
-                            el uso cotidiano en un descubrimiento sensorial
-                            dinámico e inesperado.
-                        </p>
-                    </div>
+                    </iframe>
                 </div>
             </section>
         </main>

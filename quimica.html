@@ -1,0 +1,1023 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Ficha técnica química de BOUGIE: composición de ceras y esencias con fórmulas estructurales." />
+        <title>Bougie - Formulación Química</title>
+        <link rel="icon" href="https://raw.githubusercontent.com/CRONOSWYT/Bougie/refs/heads/main/icons/Logo_BOUGIE.png" />
+
+        <!-- Google Fonts: Inter -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Font Awesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+            crossorigin="anonymous"
+        />
+
+        <style>
+/* ════════════════════════════════════════════════════
+   VARIABLES Y BASE
+   ════════════════════════════════════════════════════ */
+:root {
+    --primary: #3eb7ff;
+    --secondary: #6be0ff;
+    --bg-dark: #021235;
+    --card-bg: rgba(12, 27, 58, 0.7);
+    --glass-border: rgba(61, 182, 255, 0.25);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+    color: #e8f6ff;
+    background: radial-gradient(
+        circle at top left,
+        rgba(12, 38, 88, 1) 0%,
+        var(--bg-dark) 100%
+    );
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.icono {
+    text-align: center;
+    padding: 80px 20px 40px;
+    background: linear-gradient(
+        180deg,
+        rgba(4, 34, 76, 0.8),
+        var(--bg-dark)
+    );
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.logo img {
+    width: 100%;
+    max-width: 200px;
+    filter: drop-shadow(0 0 15px rgba(62, 183, 255, 0.4));
+    margin-bottom: 25px;
+}
+
+.hero-text {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    color: var(--secondary);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.hero-subtext {
+    color: #a3c4e8;
+    font-size: 0.95rem;
+}
+
+/* Descripción en la sección de Inicio */
+.descripcion-bougie {
+    color: #a3c4e8;
+    font-size: 1rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.descripcion-bougie p {
+    margin-bottom: 15px;
+}
+
+.descripcion-bougie p:last-child {
+    margin-bottom: 0;
+}
+
+/* Tarjeta centrada en la sección de Inicio */
+#inicio-info .tarjeta {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Invita a explorar el menú */
+.invita-explorar {
+    margin-top: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--secondary);
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+.invita-explorar i {
+    color: var(--primary);
+    font-size: 1.3rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
+
+/* ════════════════════════════════════════════════════
+   CONTENEDOR PRINCIPAL
+   ════════════════════════════════════════════════════ */
+.espaciador {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    flex: 1;
+}
+
+/* ════════════════════════════════════════════════════
+   TARJETAS (IDENTIDAD / VALORES)
+   ════════════════════════════════════════════════════ */
+h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--secondary);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: relative;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--primary);
+    margin: 10px auto;
+}
+
+.tarjetas {
+    display: grid;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.tarjetas-3 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.tarjeta {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    padding: 35px;
+    border-radius: 24px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+}
+
+.tarjeta h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.tarjeta p {
+    color: #a3c4e8;
+}
+
+/* ════════════════════════════════════════════════════
+   GRÁFICAS / ANÁLISIS DE MERCADO (SVG)
+   ════════════════════════════════════════════════════ */
+.grid-graficas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.tarjeta-grafica {
+    padding: 25px;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+}
+
+.canvas-container {
+    flex-grow: 1;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.grafica-svg {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+}
+
+.grafica-leyenda {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.grafica-leyenda .leyenda-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: #a3c4e8;
+}
+
+.grafica-leyenda .leyenda-color {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+/* Gráfica de barras */
+.bar-chart {
+    width: 100%;
+    max-width: 400px;
+}
+
+.bar-chart .bar-group {
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.bar-chart .bar-label {
+    min-width: 110px;
+    font-size: 0.9rem;
+    color: #a3c4e8;
+    text-align: right;
+}
+
+.bar-chart .bar-track {
+    flex-grow: 1;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+}
+
+.bar-chart .bar-fill {
+    height: 100%;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--bg-dark);
+    min-width: 2px;
+}
+
+.bar-chart-svg {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+@media (max-width: 900px) {
+    .grid-graficas {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ════════════════════════════════════════════════════
+   ENCUESTA (IFRAME CORREGIDO Y ADAPTATIVO)
+   ════════════════════════════════════════════════════ */
+.iframe-container {
+    width: 100%;
+    max-width: 100%;
+    background: var(--card-bg);
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+}
+
+.iframe-container iframe {
+    width: 100%;
+    height: 75vh;
+    min-height: 600px;
+    max-height: 900px;
+    border: 0;
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .iframe-container iframe {
+        height: 80vh;
+        min-height: 500px;
+    }
+}
+
+/* ════════════════════════════════════════════════════
+   GALERÍA / COLLAGE MASONRY
+   ════════════════════════════════════════════════════ */
+.grid-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-auto-rows: 180px;
+    grid-auto-flow: dense;
+    gap: 1.25rem;
+}
+
+.tarjeta-galeria {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta-galeria:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.tarjeta-galeria img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.info-galeria {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.8rem 1rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+    color: #ffffff;
+}
+
+.info-galeria h3 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.tarjeta-destacada {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.tarjeta-ancha {
+    grid-column: span 2;
+}
+
+@media (max-width: 600px) {
+    .tarjeta-destacada,
+    .tarjeta-ancha {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
+
+/* ════════════════════════════════════════════════════
+   FOOTER
+   ════════════════════════════════════════════════════ */
+footer {
+    background: rgba(1, 10, 29, 0.95);
+    padding: 60px 20px;
+    text-align: center;
+    border-top: 1px solid var(--glass-border);
+}
+
+.footer-info {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-copy {
+    color: #a3c4e8;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.creadores {
+    font-weight: 700;
+    color: var(--secondary);
+    margin: 15px 0;
+    font-size: 1.1rem;
+}
+
+.email-link {
+    color: var(--primary);
+    text-decoration: none;
+    border: 1px solid var(--primary);
+    padding: 10px 25px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.email-link:hover,
+.email-link:focus {
+    background: var(--primary);
+    color: white;
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* ════════════════════════════════════════════════════
+   BOTÓN FLOTANTE (Asistente Gemini)
+   ════════════════════════════════════════════════════ */
+.bot-fab {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.bot-fab:hover,
+.bot-fab:focus {
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 15px 40px rgba(62, 183, 255, 0.5);
+    outline: 2px solid var(--primary);
+    outline-offset: 4px;
+}
+
+.bot-fab i {
+    font-size: 28px;
+    color: white;
+}
+
+.bot-fab span {
+    position: absolute;
+    bottom: -34px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(2, 18, 53, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--glass-border);
+    color: #e8f6ff;
+    font-size: 0.7rem;
+    padding: 4px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.bot-fab:hover span,
+.bot-fab:focus span {
+    opacity: 1;
+}
+
+@media (max-width: 600px) {
+    .bot-fab {
+        bottom: 15px;
+        right: 15px;
+        width: 60px;
+        height: 60px;
+    }
+    .bot-fab i {
+        font-size: 22px;
+    }
+}
+
+/* ════════════════════════════════════════════════════
+   LANDING PAGE
+   ════════════════════════════════════════════════════ */
+.landing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    padding: 2rem 0;
+}
+
+.landing-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.landing-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary);
+}
+
+.landing-card i {
+    font-size: 2.5rem;
+    color: var(--primary);
+}
+
+.landing-card h3 {
+    font-size: 1.2rem;
+    color: var(--secondary);
+    margin: 0;
+}
+
+.landing-card span {
+    font-size: 0.85rem;
+    color: #a3c4e8;
+    line-height: 1.4;
+}
+
+.landing-card a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: auto;
+    padding: 10px 0;
+    border-top: 1px solid var(--glass-border);
+}
+        
+
+/* ════════════════════════════════════════════════════
+   QUÍMICA - FICHA TÉCNICA
+   ════════════════════════════════════════════════════ */
+/* Tabla comparativa de propiedades físico-químicas */
+.tabla-comparativa {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+.tabla-comparativa th,
+.tabla-comparativa td {
+    padding: 12px 16px;
+    text-align: center;
+    border: 1px solid var(--glass-border);
+}
+
+.tabla-comparativa th {
+    background: var(--card-bg);
+    color: var(--secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+}
+
+.tabla-comparativa td {
+    color: #a3c4e8;
+    font-size: 0.9rem;
+}
+
+.tabla-comparativa tr:nth-child(even) td {
+    background: rgba(12, 27, 58, 0.4);
+}
+
+/* Tarjetas de fórmulas químicas */
+.tarjeta-formula {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 25px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.tarjeta-formula:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary);
+}
+
+.tarjeta-formula .formula-titulo {
+    color: var(--primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tarjeta-formula .formula-subtipo {
+    color: var(--secondary);
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tarjeta-formula .formula-molecular {
+    font-family: "Courier New", monospace;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--secondary);
+    text-align: center;
+    margin: 10px 0;
+    letter-spacing: 1px;
+}
+
+.tarjeta-formula .formula-atomos {
+    color: #a3c4e8;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 8px;
+}
+
+/* Grid de fórmulas */
+.grid-formulas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Texto químico con subíndices */
+.quim {
+    font-family: "Courier New", monospace;
+    font-weight: 600;
+}
+
+.sub {
+    font-size: 0.8em;
+    vertical-align: sub;
+}
+
+/* Información técnica destacada */
+.info-tecnica {
+    background: rgba(62, 183, 255, 0.1);
+    border-left: 3px solid var(--primary);
+    padding: 15px 20px;
+    border-radius: 0 8px 8px 0;
+    margin: 15px 0;
+}
+
+.info-tecnica p {
+    color: #a3c4e8;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Subtítulo de sección */
+h3.subtitulo {
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin: 20px 0 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Subtítulo dentro de tarjetas de fórmula (corriente normal, no absoluto) */
+.formula-subtitulo-box {
+    background: rgba(10, 40, 80, 0.5);
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin: 8px 0;
+    display: inline-block;
+}
+
+        </style>
+    </head>
+
+    <body>
+        <!-- HEADER / HERO -->
+        <header class="icono">
+            <div class="logo">
+                <img
+                    src="https://raw.githubusercontent.com/CRONOSWYT/Bougie/refs/heads/main/icons/Logo_BOUGIE.png"
+                    alt="Logo de Bougie"
+                />
+            </div>
+            <p class="hero-text"><strong>Bougie</strong></p>
+            <p class="hero-subtext">
+                Formulación Química · Ceras y Esencias
+            </p>
+        </header>
+
+        <main class="espaciador">
+            <!-- INTRODUCCIÓN -->
+            <section>
+                <h2>Ficha Técnica Química</h2>
+                <div class="tarjeta">
+                    <div class="descripcion-bougie">
+                        <p>
+                            La matriz de BOUGIE se compone de una capa lipídica
+                            estructurante (cera) y una fracción volátil aromática
+                            (esencias). Esta ficha técnica detalla la composición
+                            orgánica molecular de ambos componentes, sus fórmulas
+                            estructurales y el fundamento físico-químico que
+                            diferencia la rigidez de la cera de la volatilidad
+                            de las esencias.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CERA (MATRIZ LIPÍDICA) -->
+            <section>
+                <h3 class="subtitulo">1. Cera — Matriz Lipídica Estructurante</h3>
+                <div class="tarjetas tarjetas-3">
+                    <div class="tarjeta">
+                        <h3>Ésteres Cerosos</h3>
+                        <p>
+                            Ésteres de ácidos grasos de cadena larga
+                            (C<sub>14</sub>–C<sub>36</sub>) y alcoholes
+                            monohidroxílicos (C<sub>16</sub>–C<sub>30</sub>).
+                        </p>
+                        <p>
+                            <strong>Ejemplo — Cera de abeja:</strong><br />
+                            Palmitato de miricilo<br />
+                            <span class="formula-molecular">C<sub>15</sub>H<sub>31</sub>COO–C<sub>30</sub>H<sub>61</sub> · C<sub>46</sub>H<sub>92</sub>O<sub>2</sub></span>
+                        </p>
+                    </div>
+                    <div class="tarjeta">
+                        <h3>Hidrocarburos Alcanos</h3>
+                        <p>
+                            Cadenas lineales saturadas sin grupos funcionales
+                            (C<sub>25</sub>–C<sub>35</sub>).
+                        </p>
+                        <p>
+                            Fórmula general:<br />
+                            <span class="formula-molecular">C<sub>n</sub>H<sub>2n+2</sub></span>
+                        </p>
+                    </div>
+                    <div class="tarjeta">
+                        <h3>Ácidos y Alcoholes Libres</h3>
+                        <p>
+                            Moléculas no esterificadas con grupos
+                            carboxilo (–COOH) y alcohol (–OH).
+                        </p>
+                        <p>
+                            <strong>Ejemplo — Ácido palmítico:</strong><br />
+                            <span class="formula-molecular">CH<sub>3</sub>(CH<sub>2</sub>)<sub>14</sub>COOH · C<sub>16</sub>H<sub>32</sub>O<sub>2</sub></span>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ESENCIAS (FRACCIÓN AROMÁTICA) -->
+            <section>
+                <h3 class="subtitulo">2. Esencias — Fracción Aromática Volátil</h3>
+                <div class="tarjetas tarjetas-3">
+                    <div class="tarjeta">
+                        <h3>Monoterpenos<br /><span class="formula-subtipo" style="display: block; color: var(--secondary); font-size: 0.8rem; margin-top: 5px;">C<sub>10</sub>H<sub>16</sub></span></h3>
+                        <p>
+                            2 unidades de isopreno. Moléculas ligeras y de alta
+                            volatilidad.
+                        </p>
+                        <p>
+                            <strong>Ejemplos:</strong> Limoneno, α-Pineno
+                        </p>
+                    </div>
+                    <div class="tarjeta">
+                        <h3>Sesquiterpenos<br /><span class="formula-subtipo" style="display: block; color: var(--secondary); font-size: 0.8rem; margin-top: 5px;">C<sub>15</sub>H<sub>24</sub></span></h3>
+                        <p>
+                            3 unidades de isopreno. Fijadores de aroma de mayor
+                            peso.
+                        </p>
+                        <p>
+                            <strong>Ejemplo:</strong> β-Cariofileno
+                        </p>
+                    </div>
+                    <div class="tarjeta">
+                        <h3>Terpenoides Oxigenados<br /><span class="formula-subtipo" style="display: block; color: var(--secondary); font-size: 0.8rem; margin-top: 5px;">C<sub>10–15</sub>H<sub>16–24</sub>O</span></h3>
+                        <p>
+                            Incorporan alcoholes, aldehídos y cetonas.
+                        </p>
+                        <p>
+                            <strong>Ejemplos:</strong> Mentol, Linalol,
+                            Citral, Vainillina
+                        </p>
+                    </div>
+                    <div class="tarjeta">
+                        <h3>Fenilpropanoides<br /><span class="formula-subtipo" style="display: block; color: var(--secondary); font-size: 0.8rem; margin-top: 5px;">C<sub>6</sub>–C<sub>3</sub></span></h3>
+                        <p>
+                            Anillo aromático derivado de aminoácidos.
+                        </p>
+                        <p>
+                            <strong>Ejemplos:</strong> Eugenol, Anetol
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- COMPARATIVA FÍSICO-QUÍMICA -->
+            <section>
+                <h3 class="subtitulo">3. Comparativa Físico-Química</h3>
+                <div class="info-tecnica">
+                    <p>
+                        El alto peso molecular de los ésteres cerosos permite
+                        sumar cientos de pequeñas interacciones de London a lo
+                        largo de sus extensas cadenas lipídicas, requiriendo
+                        calor significativo para separar las moléculas (fusión).
+                        Por el contrario, las esencias poseen moléculas pequeñas
+                        y ligeras cuya energía térmica a temperatura ambiente
+                        supera las fuerzas intermoleculares, permitiéndoles
+                        escapar a fase gaseosa (alta volatilidad aromática).
+                    </p>
+                </div>
+                <table class="tabla-comparativa">
+                    <thead>
+                        <tr>
+                            <th>Parámetro</th>
+                            <th>Cera Orgánica (Sólida)</th>
+                            <th>Esencia / Aceite Esencial (Volátil)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Peso Molecular</td>
+                            <td>Alto (~600–900 g/mol)</td>
+                            <td>Bajo (~136–220 g/mol)</td>
+                        </tr>
+                        <tr>
+                            <td>Fuerzas Intermoleculares</td>
+                            <td>VdW/London (cadenas largas)</td>
+                            <td>Dipo-dipolo, dispersión corta</td>
+                        </tr>
+                        <tr>
+                            <td>Punto de Fusión / Estado</td>
+                            <td>60–85 °C (sólido maleable)</td>
+                            <td>&lt; 0 °C (líquido fluido)</td>
+                        </tr>
+                        <tr>
+                            <td>Presión de Vapor</td>
+                            <td>&lt; 10<sup>–6</sup> mmHg</td>
+                            <td>0.1–5 mmHg</td>
+                        </tr>
+                        <tr>
+                            <td>Función en Producto</td>
+                            <td>Estructura, consistencia, película protectora, textura</td>
+                            <td>Perfume, notas aromáticas, bioactividad</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- FÓRMULAS ESTRUCTURALES -->
+            <section>
+                <h3 class="subtitulo">4. Fórmulas Estructurales</h3>
+
+                <h4 style="color: var(--secondary); margin: 20px 0 10px; font-size: 1rem;">Cera (Matriz Lipídica)</h4>
+                <div class="grid-formulas">
+                    <div class="tarjeta-formula">
+                        <div class="formula-titulo">Éster Ceroso</div>
+                        <div class="formula-subtitulo-box">
+                            <span class="formula-subtipo">Palmitato de miricilo (cera de abeja)</span>
+                        </div>
+                        <div class="formula-molecular" style="font-size: 1.1rem;">C<sub>15</sub>H<sub>31</sub>COO–C<sub>30</sub>H<sub>61</sub></div>
+                        <div class="formula-atomos">C<sub>46</sub>H<sub>92</sub>O<sub>2</sub></div>
+                    </div>
+                    <div class="tarjeta-formula">
+                        <div class="formula-titulo">Hidrocarburo Alcano</div>
+                        <div class="formula-subtitulo-box">
+                            <span class="formula-subtipo">Cadena lineal saturada (C<sub>25</sub>–C<sub>35</sub>)</span>
+                        </div>
+                        <div class="formula-molecular">C<sub>n</sub>H<sub>2n+2</sub></div>
+                    </div>
+                    <div class="tarjeta-formula">
+                        <div class="formula-titulo">Ácido Graso Libre</div>
+                        <div class="formula-subtitulo-box">
+                            <span class="formula-subtipo">Ácido palmítico — grupo –COOH</span>
+                        </div>
+                        <div class="formula-molecular">CH<sub>3</sub>(CH<sub>2</sub>)<sub>14</sub>COOH</div>
+                        <div class="formula-atomos">C<sub>16</sub>H<sub>32</sub>O<sub>2</sub></div>
+                    </div>
+                    <div class="tarjeta-formula">
+                        <div class="formula-titulo">Alcohol Libre</div>
+                        <div class="formula-subtitulo-box">
+                            <span class="formula-subtipo">Alcohol miricílico — grupo –OH</span>
+                        </div>
+                        <div class="formula-molecular">CH<sub>3</sub>(CH<sub>2</sub>)<sub>28</sub>CH<sub>2</sub>OH</div>
+                        <div class="formula-atomos">C<sub>30</sub>H<sub>62</sub>O</div>
+                    </div>
+                </div>
+
+                <h4 style="color: var(--secondary); margin: 30px 0 10px; font-size: 1rem;">Esencias (Fracción Aromática Volátil)</h4>
+                <div class="grid-formulas">
+                    <div class="tarjeta-formula">
+                        <div class="formula-titulo">Limoneno</div>
+                        <div class="formula-subtipo">Monoterpeno</div>
+                        <div class="formula-molecular">C<sub>10</sub>H<sub>16</sub></div>
+                    </div>
+                    <div class="tarjeta-formula">
+                        <div class="formula-titulo">α-Pineno</div>
+                        <div class="formula-subtipo">Monoterpeno</div>
+                        <div class="formula-molecular">C<sub>10</sub>H<sub>16</sub></div>
+                    </div>
+                    <div class="tarjeta-formula">
+                        <div class="formula-titulo">β-Cariofileno</div>
+                        <div class="formula-subtipo">Sesquiterpeno</div>
+                        <div class="formula-molecular">C<sub>15</sub>H<sub>24</sub></div>
+                    </div>
+                    <div class="tarjeta-formula">
+                        <div class="formula-titulo">Mentol</div>
+                        <div class="formula-subtipo">Monoterpeno bicíclico</div>
+                        <div class="formula-molecular">C<sub>10</sub>H<sub>20</sub>O</div>
+                    </div>
+                    <div class="tarjeta-formula">
+                        <div class="formula-titulo">Linalol</div>
+                        <div class="formula-subtipo">Sesquiterpeno oxigenado</div>
+                        <div class="formula-molecular">C<sub>10</sub>H<sub>18</sub>O</div>
+                    </div>
+                    <div class="tarjeta-formula">
+                        <div class="formula-titulo">Citral (Geranial)</div>
+                        <div class="formula-subtipo">Terpenoide oxigenado</div>
+                        <div class="formula-molecular">C<sub>10</sub>H<sub>16</sub>O</div>
+                    </div>
+                    <div class="tarjeta-formula">
+                        <div class="formula-titulo">Vainillina</div>
+                        <div class="formula-subtipo">Aldehído</div>
+                        <div class="formula-molecular">C<sub>8</sub>H<sub>8</sub>O<sub>3</sub></div>
+                    </div>
+                    <div class="tarjeta-formula">
+                        <div class="formula-titulo">Eugenol</div>
+                        <div class="formula-subtipo">Fenilpropanoide (C<sub>6</sub>–C<sub>3</sub>)</div>
+                        <div class="formula-molecular">C<sub>10</sub>H<sub>12</sub>O<sub>2</sub></div>
+                    </div>
+                    <div class="tarjeta-formula">
+                        <div class="formula-titulo">Anetol</div>
+                        <div class="formula-subtipo">Fenilpropanoide (C<sub>6</sub>–C<sub>3</sub>)</div>
+                        <div class="formula-molecular">C<sub>10</sub>H<sub>12</sub>O</div>
+                    </div>
+                </div>
+
+                <div class="info-tecnica" style="margin-top: 30px;">
+                    <p>
+                        <strong>Convención de notación:</strong> Cada vértice o
+                        extremo de línea representa un átomo de carbono; los
+                        hidrógenos se omiten implícitamente. Los enlaces
+                        dobles se dibujan con dos líneas. Las cadenas largas
+                        se abrevian con el símbolo (CH<sub>2</sub>)<sub>n</sub>
+                        e indican el número de grupos repetidos. La
+                        estereoquímica (quiralidad e isomería cis/trans) se
+                        omite en esta representación esquemática.
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="footer-info">
+                <p class="footer-copy">
+                    © 2026 BOUGIE - Formas que decoran, aromas que sorprenden.
+                </p>
+                <p class="creadores">
+                    Equipo: Pablo Bedoya, Nicolas Agudelo Sanint y Alexa Perdomo
+                    Agudelo
+                </p>
+                <a
+                    href="mailto:bougie.magique2026@gmail.com"
+                    class="email-link"
+                    >bougie.magique2026@gmail.com</a
+                >
+            </div>
+        </footer>
+
+        <!-- BOTÓN FLOTANTE: Asistente de Gemini -->
+        <a
+            href="https://gemini.google.com/gem/19jp6gpLYU47BwzDojwpcwbHi9by_gsHw?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bot-fab"
+            aria-label="Abrir asistente de Gemini"
+        >
+            <i class="fa-solid fa-comment-dots"></i>
+            <span>VetoBot</span>
+        </a>
+    </body>
+</html>
