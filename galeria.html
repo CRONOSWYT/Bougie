@@ -3,9 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Galería de productos BOUGIE: velas artesanales con diseño escultórico." />
+        <meta name="description" content="Galería BOUGIE: velas artesanales con diseño escultórico y proceso de creación." />
         <title>Bougie - Galería</title>
         <link rel="icon" href="https://raw.githubusercontent.com/CRONOSWYT/Bougie/refs/heads/main/icons/Logo_BOUGIE.png" />
+
         <!-- Google Fonts: Inter -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,12 +14,14 @@
             href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
         />
+
         <!-- Font Awesome -->
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
             crossorigin="anonymous"
         />
+
         <style>
 /* ════════════════════════════════════════════════════
    VARIABLES Y BASE
@@ -562,8 +565,122 @@ footer {
     border-top: 1px solid var(--glass-border);
 }
 
+        
+
+/* ════════════════════════════════════════════════════
+   GALERÍA DE VELAS (ESTILO INICIO / LANDING-CARD)
+   ════════════════════════════════════════════════════ */
+.candle-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    padding: 2rem 0;
+}
+
+.candle-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.candle-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary);
+}
+
+.candle-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 16px;
+    display: block;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.candle-card h3 {
+    font-size: 1.1rem;
+    color: var(--secondary);
+    margin: 0;
+}
+
+.candle-card span {
+    font-size: 0.85rem;
+    color: #a3c4e8;
+    line-height: 1.4;
+}
+
+/* Tarjeta destacada de modelo ==*/
+.candle-card.destacada {
+    border-color: var(--primary);
+    box-shadow: 0 0 30px rgba(62, 183, 255, 0.3);
+}
+
+.candle-card.destacada::before {
+    content: "★ Modelo";
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--primary);
+    color: var(--bg-dark);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+
+/* Process cards (creación) estilo galería masonry ==*/
+.grid-proceso {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.tarjeta-proceso {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tarjeta-proceso:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary);
+}
+
+.tarjeta-proceso img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 16px;
+    display: block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.tarjeta-proceso .paso {
+    color: var(--primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
         </style>
     </head>
+
     <body>
         <!-- HEADER / HERO -->
         <header class="icono">
@@ -575,56 +692,115 @@ footer {
                 Shapes that decorate, aromas that surprise.
             </p>
         </header>
+
         <main class="espaciador">
-            <section id="galeria">
-                <h2>Galería de Productos</h2>
-                <div class="grid-galeria">
-                    <article class="tarjeta-galeria tarjeta-destacada">
-                        <img
-                            loading="lazy"
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCbN-YIcMxSlA4T8YHbtQognqed31F-7d7bzQaLpzFdQ&s=10"
-                            alt="Velas Bougie en forma de Yin Yang"
-                        />
-                        <div class="info-galeria">
-                            <h3>Yin Yang</h3>
-                        </div>
-                    </article>
+            <!-- SECCIÓN 1: CREACIÓN DE LAS VELAS -->
+            <section>
+                <h2>La Creación de las Velas</h2>
+                <div class="descripcion-bougie" style="text-align: center; max-width: 800px; margin: 0 auto 30px;">
+                    <p>
+                        Cada vela BOUGIE es una pieza artesanal elaborada con
+                        paciencia y precisión química. Desde la selección de la
+                        cera hasta el aroma aleatorio, cada paso del proceso
+                        creativo garantiza una escultura decorativa única.
+                    </p>
+                </div>
+                <div class="grid-proceso">
+                    <div class="tarjeta-proceso">
+                        <img loading="lazy" src="https://raw.githubusercontent.com/CRONOSWYT/Bougie/refs/heads/main/img/creacion-1.jpeg" alt="Creación de velas - Paso 1" />
+                        <p class="paso">Paso 1 · Preparación de la cera</p>
+                    </div>
+                    <div class="tarjeta-proceso">
+                        <img loading="lazy" src="https://raw.githubusercontent.com/CRONOSWYT/Bougie/refs/heads/main/img/creacion-2.jpeg" alt="Creación de velas - Paso 2" />
+                        <p class="paso">Paso 2 · Preparación de la cera</p>
+                    </div>
+                    <div class="tarjeta-proceso">
+                        <img loading="lazy" src="https://raw.githubusercontent.com/CRONOSWYT/Bougie/refs/heads/main/img/creacion -3.jpeg" alt="Creación de velas - Paso 3" />
+                        <p class="paso">Paso 3 · Preparación del molde</p>
+                    </div>
+                    <div class="tarjeta-proceso">
+                        <img loading="lazy" src="https://raw.githubusercontent.com/CRONOSWYT/Bougie/refs/heads/main/img/creacion-4.jpeg" alt="Creación de velas - Paso 4" />
+                        <p class="paso">Paso 4 · Rellenado del molde</p>
+                    </div>
+                </div>
+            </section>
 
-                    <article class="tarjeta-galeria">
-                        <img
-                            loading="lazy"
-                            src="http://www.sunbeamcandles.com/cdn/shop/files/Natural-Handcrafted-100_-Beeswax-Candle-non-toxic-emergency-highest-rated-long-burning-Unscented-Large-Red-carved-Rose-Sculpted-Candle-Valentines-unique-trending-home-gifts-grande-flower-love3_1200x1200.png?v=1723673812"
-                            alt="Velas Bougie talladas en forma de rosa"
-                        />
-                        <div class="info-galeria">
-                            <h3>Rosas</h3>
-                        </div>
-                    </article>
-
-                    <article class="tarjeta-galeria">
-                        <img
-                            loading="lazy"
-                            src="https://bcdn.vendora.gr/0/a9/00/a9008e6f6cccf42ceead33719f74e74ea5373a06.jpg?class=lsq"
-                            alt="Velas Bougie con diseño de temática Minecraft"
-                        />
-                        <div class="info-galeria">
-                            <h3>Minecraft</h3>
-                        </div>
-                    </article>
-
-                    <article class="tarjeta-galeria tarjeta-ancha">
-                        <img
-                            loading="lazy"
-                            src="https://i.etsystatic.com/41768317/r/il/dfab68/6037167740/il_500x500.6037167740_q7r7.jpg"
-                            alt="Velas tipo pilar Bougie en display"
-                        />
-                        <div class="info-galeria">
-                            <h3>Pillar candles</h3>
-                        </div>
-                    </article>
+            <!-- SECCIÓN 2: LAS VELAS -->
+            <section style="margin-top: 3rem;">
+                <h2>Nuestra Colección</h2>
+                <div class="descripcion-bougie" style="text-align: center; max-width: 800px; margin: 0 auto 30px;">
+                    <p>
+                        Explora nuestra colección de velas esculturales. Cada
+                        pieza combina diseño artístico con un aroma sorpresa,
+                        creada siguiendo el modelo de referencia que garantiza
+                        calidad y consistencia en cada producción.
+                    </p>
+                </div>
+                <div class="candle-grid">
+                    <div class="candle-card destacada">
+                        <img loading="lazy" src="https://raw.githubusercontent.com/CRONOSWYT/Bougie/refs/heads/main/img/modelo.jpeg" alt="Modelo de referencia BOUGIE" />
+                        <h3>Modelo de Referencia</h3>
+                        <span>Diseño escultórico con aroma aleatorio</span>
+                    </div>
+                    <div class="candle-card">
+                        <img loading="lazy" src="https://raw.githubusercontent.com/CRONOSWYT/Bougie/refs/heads/main/img/vela1.jpeg" alt="Vela BOUGIE - Yin Yang" />
+                        <h3>Flor</h3>
+                        <span>Colección BOUGIE</span>
+                    </div>
+                    <div class="candle-card">
+                        <img loading="lazy" src="https://raw.githubusercontent.com/CRONOSWYT/Bougie/refs/heads/main/img/vela2.jpeg" alt="Vela BOUGIE - Rosa tallada" />
+                        <h3>LOVE</h3>
+                        <span>Colección BOUGIE</span>
+                    </div>
+                    <div class="candle-card">
+                        <img loading="lazy" src="https://raw.githubusercontent.com/CRONOSWYT/Bougie/refs/heads/main/img/vela3.jpeg" alt="Vela BOUGIE - Creeper Minecraft" />
+                        <h3>Vela de Cupido</h3>
+                        <span>Colección BOUGIE</span>
+                    </div>
+                    <div class="candle-card">
+                        <img loading="lazy" src="https://raw.githubusercontent.com/CRONOSWYT/Bougie/refs/heads/main/img/vela4.jpeg" alt="Vela BOUGIE - Pilar esculpido" />
+                        <h3>Arco con su flecha</h3>
+                        <span>Colección BOUGIE</span>
+                    </div>
+                    <div class="candle-card">
+                        <img loading="lazy" src="https://raw.githubusercontent.com/CRONOSWYT/Bougie/refs/heads/main/img/vela5.jpeg" alt="Vela BOUGIE - Cera florcida" />
+                        <h3>Vestido elegante de cera</h3>
+                        <span>Colección BOUGIE</span>
+                    </div>
+                    <div class="candle-card">
+                        <img loading="lazy" src="https://raw.githubusercontent.com/CRONOSWYT/Bougie/refs/heads/main/img/vela6.jpeg" alt="Vela BOUGIE - Forma orgánica" />
+                        <h3>Abuela de cera</h3>
+                        <span>Colección BOUGIE</span>
+                    </div>
+                    <div class="candle-card">
+                        <img loading="lazy" src="https://raw.githubusercontent.com/CRONOSWYT/Bougie/refs/heads/main/img/vela7.jpeg" alt="Vela BOUGIE - Veladora decorativa" />
+                        <h3>Vela de corazón con rostros besándose</h3>
+                        <span>Colección BOUGIE</span>
+                    </div>
+                    <div class="candle-card">
+                        <img loading="lazy" src="https://raw.githubusercontent.com/CRONOSWYT/Bougie/refs/heads/main/img/vela8.jpeg" alt="Vela BOUGIE - Escultura flotante" />
+                        <h3>Fresa de cera</h3>
+                        <span>Colección BOUGIE</span>
+                    </div>
+                    <div class="candle-card">
+                        <img loading="lazy" src="https://raw.githubusercontent.com/CRONOSWYT/Bougie/refs/heads/main/img/vela9.jpeg" alt="Vela BOUGIE - Cera translúcida" />
+                        <h3>Cara de oso de cera</h3>
+                        <span>Colección BOUGIE</span>
+                    </div>
+                    <div class="candle-card">
+                        <img loading="lazy" src="https://raw.githubusercontent.com/CRONOSWYT/Bougie/refs/heads/main/img/vela10.jpeg" alt="Vela BOUGIE - Velita aromática" />
+                        <h3>Vela de corazón de Feliz Día de San Valentín</h3>
+                        <span>Colección BOUGIE</span>
+                    </div>
+                    <div class="candle-card">
+                        <img loading="lazy" src="https://raw.githubusercontent.com/CRONOSWYT/Bougie/refs/heads/main/img/vela11.jpeg" alt="Vela BOUGIE - Set completo" />
+                        <h3>Torre Eiffel de cera</h3>
+                        <span>Colección BOUGIE</span>
+                    </div>
                 </div>
             </section>
         </main>
+
         <!-- FOOTER -->
         <footer>
             <div class="footer-info">
@@ -635,7 +811,9 @@ footer {
                     Equipo: Pablo Bedoya, Nicolas Agudelo Sanint y Alexa Perdomo
                     Agudelo
                 </p>
-                <a href="mailto:bougie.magique2026@gmail.com" class="email-link"
+                <a
+                    href="mailto:bougie.magique2026@gmail.com"
+                    class="email-link"
                     >bougie.magique2026@gmail.com</a
                 >
             </div>
